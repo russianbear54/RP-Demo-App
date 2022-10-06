@@ -1,8 +1,16 @@
 import React from 'react'
+import {Wrapper,Par,Trio,Title} from '../styles/stylesSC'
+
+
+
 
 const ListsPage = () => {
   return (
-    <div>Lists</div>
+  <>
+<Title>Countries List</Title>
+
+</>
+   
   )
 }
 

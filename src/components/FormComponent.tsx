@@ -1,16 +1,18 @@
 import React from 'react'
-// import styled from 'styled-components';
+
 import FormPageTitles from './FormPageTitles';
 import TextField from '@mui/material/TextField';
 import { useFormik } from 'formik';
 import Container from '@mui/material/Container';
 import { InputLabel, MenuItem, Select } from '@mui/material';
-import * as styles from '../styles/styles'
+import * as styles from '../styles/stylesMUI'
+
 
 
 
 
 const FormComponent:React.FC<{}>=()=> {
+
 
   
 
@@ -20,12 +22,18 @@ const FormComponent:React.FC<{}>=()=> {
       lastName:'',
       age:'',
       department:''
-    },
+    }, 
+    
    
+
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      alert(values.firstName);
     },
   });
+
+  
+
+  console.log('Formic',formik.values)
 
   return (
     <div>
@@ -69,16 +77,16 @@ const FormComponent:React.FC<{}>=()=> {
   
         
          <InputLabel variant='outlined'>Department</InputLabel>
-          <Select fullWidth variant='standard' >
-            <MenuItem value={'frontEnd'}>Frontend Developer</MenuItem>
-            <MenuItem value={'backEnd'}>Backend Developer</MenuItem>
-            <MenuItem value={'fullStack'}>Fullstack Developer</MenuItem>
-            <MenuItem value={'QA'}>Quality Control</MenuItem>
-            <MenuItem value={'security'}>Security</MenuItem>
+          <Select fullWidth variant='standard' name="department" value={formik.values.department} onChange={formik.handleChange} >
+            <MenuItem id="frontEnd" value={'frontEnd'}>Frontend Developer</MenuItem>
+            <MenuItem id="backEnd"  value={'backEnd'}>Backend Developer</MenuItem>
+            <MenuItem id="fullStack" value={'fullStack'}>Fullstack Developer</MenuItem>
+            <MenuItem id="QA" value={'QA'}>Quality Control</MenuItem>
+            <MenuItem id="security" value={'security'}>Security</MenuItem>
           </Select>
        
         </Container>
-        {/* </Box> */}
+      
     </div>
   )
 }

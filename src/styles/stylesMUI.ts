@@ -18,7 +18,7 @@ width:'387.02px',
  
   border:"3.48px solid #0038FE",
   borderRadius:"26.08px",
-  zIndex:"5"
+  
 
 }
 
@@ -31,7 +31,7 @@ export const boxStyle={
   width:"128.3px",
   background:"#0038FE",
   borderRadius:"50%",
-  zIndex:"10"
+  
 }
 
 export const fieldStyle={

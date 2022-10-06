@@ -1,8 +1,11 @@
 import { Box, Card, Typography } from "@mui/material";
 import React from "react";
 import FormPageTitles from "./FormPageTitles";
-import * as styles from "../styles/styles";
-import { red } from "@mui/material/colors";
+import * as styles from "../styles/stylesMUI";
+
+
+
+
 
 
 interface HWFormValues {
@@ -13,6 +16,10 @@ interface HWFormValues {
 }
 
 const CardComponent: React.FC<HWFormValues> = ({ firstName, lastName, age, department }) => {
+
+
+
+
   return (
     <div>
       <FormPageTitles title={"Show Card"} /> 
