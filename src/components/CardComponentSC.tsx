@@ -1,19 +1,13 @@
 import React from "react";
-import {Circle,Card,Label,Value} from '../styles/stylesSC'
+import { useSelector } from "react-redux";
+import { selectForm } from "../state/formSlice";
+import {Circle,Card,Label,Value} from '../styles/FormPage/styles'
 import FormPageTitles from "./FormPageTitles";
 
 
 
-
-
-interface HWFormValues {
-    firstName: string;
-    lastName: string;
-    age: number;
-    department: string;
-  }
-
-const CardComponent: React.FC<HWFormValues> = ({ firstName, lastName, age, department }) => {
+const CardComponent: React.FC = () => {
+  const value=useSelector(selectForm)
 
     return (
         <div>
@@ -22,11 +16,11 @@ const CardComponent: React.FC<HWFormValues> = ({ firstName, lastName, age, depar
           <Circle/>  
           <Card>      
             <Label>Name</Label>
-            <Value>{firstName + lastName}</Value>
+            <Value>{value.firstName +' '+ value.lastName}</Value>
             <Label>Age</Label>
-            <Value>{age}</Value>
+            <Value>{value.age}</Value>
             <Label>Department</Label>
-            <Value>{department}</Value>
+            <Value>{value.department}</Value>
           </Card></div> 
         </div>
       );

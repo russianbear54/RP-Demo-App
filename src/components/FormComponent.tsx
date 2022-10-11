@@ -11,6 +11,8 @@ import * as styles from '../styles/stylesMUI'
 
 
 
+
+
 const FormComponent:React.FC<{}>=()=> {
 
 
@@ -23,17 +25,23 @@ const FormComponent:React.FC<{}>=()=> {
       age:'',
       department:''
     }, 
-    
+   
    
 
-    onSubmit: (values) => {
-      alert(values.firstName);
+    onSubmit: () => {
+      
     },
   });
 
-  
+ const outPut=formik.values
+ 
 
-  console.log('Formic',formik.values)
+
+ console.log('Formic',outPut)
+
+ 
+
+
 
   return (
     <div>

@@ -1,7 +1,8 @@
 import React from "react";
 import IconsLine from "../components/IconsLine";
 import PageInstruction from "../components/PageInstruction";
-import {Wrapper,Par,Trio,Title} from '../styles/stylesSC'
+import {Wrapper,Par,Trio} from '../styles/HomePage/styles'
+import { Title } from "../styles/stylesSC";
 
 
 

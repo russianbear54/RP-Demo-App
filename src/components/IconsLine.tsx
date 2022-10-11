@@ -1,12 +1,12 @@
 import React from 'react'
-import ReactLogo from '../images/react.svg'
-import MUI from '../images/mui.svg'
-import ApolloLogo from '../images/apollographql.svg'
-import ReactRouter from '../images/reactrouter.svg'
-import Redux from '../images/redux.svg'
-import StyleComps from '../images/styledcomponents.svg'
-import TypeScript from '../images/typescript.svg'
-import Formik from '../images/formik.svg'
+import ReactLogo from '../images/ToolsIcons/react.svg'
+import MUI from '../images/ToolsIcons/mui.svg'
+import ApolloLogo from '../images/ToolsIcons/apollographql.svg'
+import ReactRouter from '../images/ToolsIcons/reactrouter.svg'
+import Redux from '../images/ToolsIcons/redux.svg'
+import StyleComps from '../images/ToolsIcons/styledcomponents.svg'
+import TypeScript from '../images/ToolsIcons/typescript.svg'
+import Formik from '../images/ToolsIcons/formik.svg'
 import styled from 'styled-components';
 
 
@@ -39,4 +39,3 @@ function IconsLine() {
 export default IconsLine
 
 
-// <img src={ReactLogo} width="75.55px" alt={ReactLogo}/>
