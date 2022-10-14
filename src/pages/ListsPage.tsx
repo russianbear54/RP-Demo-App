@@ -1,4 +1,4 @@
-import { ApolloClient, ApolloProvider, gql, InMemoryCache } from '@apollo/client'
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 
 import CountriesCardComponent from '../components/CountriesCardComponent'
 import {Title} from '../styles/stylesSC'

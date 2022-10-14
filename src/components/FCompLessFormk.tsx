@@ -6,9 +6,9 @@ import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
 import { InputLabel, MenuItem, Select } from '@mui/material';
 import * as styles from '../styles/stylesMUI'
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 
-import {enterFN,enterLN,enterAge,enterPosition} from '../state/formSlice'
+// import {enterFN,enterLN,enterAge,enterPosition} from '../state/formSlice'
 
 
 
@@ -17,7 +17,7 @@ import {enterFN,enterLN,enterAge,enterPosition} from '../state/formSlice'
 
 const FCompLessFormk:React.FC<{}>=()=> {
 
-const dispatch=useDispatch()
+// const dispatch=useDispatch()
   
 
 
@@ -37,7 +37,7 @@ const dispatch=useDispatch()
           type="text"
           variant="standard" 
         
-          onChange={(e)=>dispatch(enterFN(e.target.value))}
+          // onChange={(e)=>dispatch(enterFN(e.target.value))}
        
         />
         <TextField
@@ -48,7 +48,7 @@ const dispatch=useDispatch()
           type="text"
           variant="standard" 
          
-          onChange={(e)=>dispatch(enterLN(e.target.value))}
+          // onChange={(e)=>dispatch(enterLN(e.target.value))}
          
         />
         <TextField
@@ -59,7 +59,7 @@ const dispatch=useDispatch()
           type="number"
           variant="standard" 
         
-          onChange={(e)=>dispatch(enterAge(e.target.value.toString()))}
+          // onChange={(e)=>dispatch(enterAge(e.target.value.toString()))}
           
         />
   

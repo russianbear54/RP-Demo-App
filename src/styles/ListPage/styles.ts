@@ -53,3 +53,16 @@ letter-spacing: .13px;
 
 margin: auto;
 `
+
+export const Button=styled.button`
+font-family: 'Oranienbaum';
+font-style: normal;
+font-weight: 400;
+font-size: 30.6068px;
+line-height: 35px;
+background: #0038FE;
+color: #FFFFFF;
+width: 212.09px;
+height: 61.58px;
+border-radius: 14px;
+`
