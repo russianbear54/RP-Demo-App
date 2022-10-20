@@ -11,7 +11,7 @@ const formPageTitle={
   fontWeight:400,
   letterSpacing:".55px",
   lineHeight:'98.98px',
-  fontSize:"85.7px",
+  fontSize:"75.7px",
   marginBottom:"83.39px"
 }
 

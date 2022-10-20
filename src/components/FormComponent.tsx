@@ -2,30 +2,33 @@ import React from "react";
 
 import FormPageTitles from "./FormPageTitles";
 import TextField from "@mui/material/TextField";
-import {  Form, Formik,  } from "formik";
-import Container from "@mui/material/Container";
-import { InputLabel, MenuItem, Select } from "@mui/material";
+import { Form, Formik } from "formik";
+
+import { Container, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import * as styles from "../styles/stylesMUI";
 import { useDispatch } from "react-redux";
 import { enterFields } from "../state/formSlice";
+import { FormFieldsDiv} from "../styles/FormPage/styles";
 
 const FormComponent: React.FC = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <FormPageTitles title={"Form Fields"} />
+    <>
+      <FormFieldsDiv>
+        <FormPageTitles title={"Form Fields"} />
+      </FormFieldsDiv>
 
       <Formik
         initialValues={{ firstName: "", lastName: "", age: "", department: "" }}
-        onSubmit={(values) => {console.log('vals',values,typeof values);
+        onSubmit={(values) => {
           dispatch(enterFields(values));
         }}>
         {(props) => (
           <Form>
             <Container sx={styles.formStyle}>
               <TextField
-                fullWidth
+                sx={styles.TextFieldStyle}
                 id="firstName"
                 name="firstName"
                 label="First Name"
@@ -35,7 +38,7 @@ const FormComponent: React.FC = () => {
                 onChange={props.handleChange}
               />
               <TextField
-                fullWidth
+                sx={styles.TextFieldStyle}
                 id="lastName"
                 name="lastName"
                 label="Last Name"
@@ -45,7 +48,7 @@ const FormComponent: React.FC = () => {
                 onChange={props.handleChange}
               />
               <TextField
-                fullWidth
+                sx={styles.TextFieldStyle}
                 id="age"
                 name="age"
                 label="age"
@@ -54,33 +57,41 @@ const FormComponent: React.FC = () => {
                 value={props.values.age}
                 onChange={props.handleChange}
               />
-
-              <InputLabel variant="outlined">Department</InputLabel>
-              <Select fullWidth variant="standard" name="department" value={props.values.department} onChange={props.handleChange}>
-                <MenuItem id="frontEnd" value={"frontEnd"}>
-                  Frontend Developer
-                </MenuItem>
-                <MenuItem id="backEnd" value={"backEnd"}>
-                  Backend Developer
-                </MenuItem>
-                <MenuItem id="fullStack" value={"fullStack"}>
-                  Fullstack Developer
-                </MenuItem>
-                <MenuItem id="QA" value={"QA"}>
-                  Quality Control
-                </MenuItem>
-                <MenuItem id="security" value={"security"}>
-                  Security
-                </MenuItem>
-              </Select>
-
+              <FormControl>
+                <InputLabel id="department-label">Department</InputLabel>
+                <Select
+                  labelId="department-label"
+                  variant="standard"
+                  id="dept"
+                  name="department"
+                  value={props.values.department}
+                  onChange={props.handleChange}>
+                  <MenuItem id="frontEnd" value={"Frontend Developer"}>
+                    Frontend Developer
+                  </MenuItem>
+                  <MenuItem id="backEnd" value={"Backend Developer"}>
+                    Backend Developer
+                  </MenuItem>
+                  <MenuItem id="fullStack" value={"Fullstack Developer"}>
+                    Fullstack Developer
+                  </MenuItem>
+                  <MenuItem id="QA" value={"Quality Control"}>
+                    Quality Control
+                  </MenuItem>
+                  <MenuItem id="security" value={"Security"}>
+                    Security
+                  </MenuItem>
+                </Select>
+              </FormControl>
               <button type="submit">Submit</button>
             </Container>
           </Form>
         )}
       </Formik>
-    </div>
+    </>
   );
 };
 
 export default FormComponent;
+
+//   <Container sx={styles.formStyle}></Container>

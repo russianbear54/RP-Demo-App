@@ -1,29 +1,20 @@
-import { Container, Divider } from '@mui/material';
-import CardComponentSC from '../components/CardComponentSC';
-import FormComponent from '../components/FormComponent';
-// import FCompLessFormk from '../components/FCompLessFormk'
-
-
-
-
- 
-
+import { Container } from "@mui/material";
+import CardComponent from "../components/CardComponent";
+import FormComponent from "../components/FormComponent";
+import { FormPageDiv, Split } from "../styles/FormPage/styles";
+//import FCompLessFormk from '../components/FCompLessFormk'
 
 const FormPage = () => {
-
-
-
-
-
-
-
   return (
-    <Container sx={{display:'flex'}}>
+    <>
       <FormComponent />
-      <Divider variant='inset' orientation="vertical"/>
-      <CardComponentSC />
-    </Container>
-  )
-}
+      <Split/>
+      <CardComponent />
+    </>
+  );
+};
 
-export default FormPage
+export default FormPage;
+
+
+//gap:'297.11px',

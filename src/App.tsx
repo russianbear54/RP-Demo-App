@@ -1,15 +1,13 @@
 import React from 'react';
-
-
 import './App.css';
-import NavBar from './components/NavBar';
+import NavBar from './components/nav/NavBar';
  import HomePage from './pages/HomePage';
 import FormPage from './pages/FormPage';
 import ListsPage from './pages/ListsPage';
 import { Route, Routes } from 'react-router-dom';
 
 
-function App() {
+const App:React.FC=()=> {
   return (
     <div className="App">
       <NavBar/>

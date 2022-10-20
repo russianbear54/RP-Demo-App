@@ -1,12 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import {formSlice} from '../state/formSlice'
+import { formSlice } from "../state/formSlice";
 
-
-
-
-
-const store=configureStore(formSlice)
-
+const store = configureStore(formSlice);
 
 export type RootState = ReturnType<typeof store.getState>;
 

@@ -1,49 +1,33 @@
+import React from "react";
+import { DetailsDiv, IconDiv, Label, ShipCard, Value } from "../styles/ListPage/styles";
+import { ReactComponent as GLobe } from "../images/CountriesIcons/globe.svg";
+import { ReactComponent as Location } from "../images/CountriesIcons/location.svg";
+import { ReactComponent as Phone } from "../images/CountriesIcons/phone.svg";
 
-import { Block, CountryCard, Label, Pic, Value } from '../styles/ListPage/styles'
-import Globe from '../images/CountriesIcons/globe.svg'
-import Location from '../images/CountriesIcons/location.svg'
-import Phone from '../images/CountriesIcons/phone.svg'
-
-
-interface Props{
-  name:string,
-  capital:string,
-  phone:string,
-  
+interface Props {
+  name: string;
+  capital: string;
+  phone: string;
 }
 
-
-const CountryCardComponent:React.FC<Props>=({name,capital,phone})=> {
-
-
+const CountryCardComponent: React.FC<Props> = ({ name, capital, phone }) => {
   return (
-    <CountryCard >
-     <Block >
-      <Pic src={Globe} alt='globe'/>
-      <div>
-        <Label>Country</Label>
-        <Value >{name}</Value>
-      </div>
-     </Block>
-     <Block >
-      <Pic src={Location} alt='location'/>
-      <div>
+    <ShipCard>
+      <IconDiv>
+        <GLobe fill="#0038FE" width={31.58} />
+        <Location fill="#0038FE" width={31.58} />
+        <Phone fill="#0038FE" width={31.58} />
+      </IconDiv>
+      <DetailsDiv>
+        <Label>Name</Label>
+        <Value>{name}</Value>
         <Label>Capital</Label>
-        <Value >{capital}</Value>
-      </div>
-     </Block>
-     <Block >
-      <Pic src={Phone} alt='phone'/>
-      <div>
+        <Value>{capital}</Value>
         <Label>Phone</Label>
-        <Value >{phone}</Value>
-      </div>
-     </Block> 
-    </CountryCard>
-  )
-}
+        <Value>{phone}</Value>
+      </DetailsDiv>
+    </ShipCard>
+  );
+};
 
-export default CountryCardComponent
-
-
-
+export default CountryCardComponent;

@@ -1,12 +1,10 @@
-import { gql, useQuery } from '@apollo/client'
+import { gql, useQuery } from "@apollo/client";
+import { useState } from "react";
 
-
-
-
-// import { GET_COUNTRIES } from '../pages/ListsPage'
-import { CountriesCard,Button } from '../styles/ListPage/styles'
-import CountryCardComponent from './CountryCardComponent'
-
+import { Button, ShipsCard } from "../styles/ListPage/styles";
+// import { CountriesCard,Button } from '../styles/ListPage/styles'
+import CountryCardComponent from "./CountryCardComponent";
+import { countries } from "../Dummies/countries";
 
 const GET_COUNTRIES=gql`
 query GetAllCountries{
@@ -20,46 +18,40 @@ query GetAllCountries{
 
 
 
+const CountriesCardComponent: React.FC = () => {
+  const {loading, data} = useQuery(GET_COUNTRIES);
+ 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [resultsPerPage] = useState(8);
+
+const countries=data.countries
+ console.log("countries",countries)
 
 
 
-const CountriesCardComponent: React.FC =()=> {
-  const { loading, data, error } = useQuery(GET_COUNTRIES, {
-    variables: {
-      offset: 0,
-      limit: 10
-    },
-  });
-  // const {loading, error,data}= useQuery(GET_COUNTRIES)
+  const indexOfLastCountry = currentPage * resultsPerPage;
+  const indexOfFirstCountry = indexOfLastCountry - resultsPerPage;
+  const currentCountries = countries.slice(indexOfFirstCountry, indexOfLastCountry);
 
-  
-  // const [elements,setElements]=useState(data.countries.slice(0,8))
-
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
-
- console.log("dataaaaa",data)
-
-// console.log("name",data.countries[0].name);
-// console.log("name",data.countries[0].capital);
-// console.log("name",data.countries[0].phone);
-
-
-
-let elements=data.countries.slice(0,8)
-
+  console.log("currentCountries", currentCountries);
 
 
 
   return (
     <>
-    <CountriesCard>
-     {elements && (elements.map((el: { name: string; capital: string; phone: string },index: number)=><CountryCardComponent name={el.name} capital={el.capital} phone={el.phone} key={index} />))}              
-    </CountriesCard>
-<Button onClick={()=>{}}>Load More</Button>
+      <ShipsCard>
+        {currentCountries && currentCountries.map((country:any, index:number) => (
+          <CountryCardComponent name={country.name} capital={country.capital} phone={country.phone} key={index} />
+        ))}
+      </ShipsCard>
+      <Button disabled={currentCountries.length<8}
+        onClick={() => {
+          setCurrentPage((prev) => prev + 1);
+        }}>
+        Load More
+      </Button>
     </>
-  )
-}
+  );
+};
 
-export default CountriesCardComponent
+export default CountriesCardComponent;

@@ -1,30 +1,28 @@
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+//import CountriesCardComponent from '../components/CountriesCardComponent'
+import ShipsCardComponent from "../components/ShipsCardComponent";
+import { Title } from "../styles/stylesSC";
 
-import CountriesCardComponent from '../components/CountriesCardComponent'
-import {Title} from '../styles/stylesSC'
+// const client = new ApolloClient({
+//   uri: "https://countries.trevorblades.com/",
+//   cache: new InMemoryCache(),
+// });
 
+// SPACE-X API!!!!
+const client = new ApolloClient({
+  uri: "https://api.spacex.land/graphql/",
+  cache: new InMemoryCache(),
+});
 
-
-const client=new ApolloClient({
-  uri:'https://countries.trevorblades.com/',
-  cache: new InMemoryCache()
-})
-
-const ListsPage = () => {
-
-
-
-
+const ListsPage: React.FC = () => {
   return (
-  <>
-<Title>Countries List</Title>
-<ApolloProvider client={client} >
-<CountriesCardComponent/>
-</ApolloProvider>
+    <>
+      <Title>Ships List</Title>
+      <ApolloProvider client={client}>
+        <ShipsCardComponent />
+      </ApolloProvider>
+    </>
+  );
+};
 
-</>
-   
-  )
-}
-
-export default ListsPage
+export default ListsPage;
