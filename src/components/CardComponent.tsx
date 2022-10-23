@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectForm } from "../state/formSlice";
-import { Circle, Card, Label, Value, ContainerDiv, CardComponentDiv, CardCircleDiv, ShowCardDiv } from "../styles/FormPage/styles";
+import { Circle, Card, Label, Value, CardComponentDiv, CardCircleDiv, ShowCardDiv } from "../styles/FormPage/styles";
 import FormPageTitles from "./FormPageTitles";
 
 const CardComponent: React.FC = () => {
@@ -9,12 +9,12 @@ const CardComponent: React.FC = () => {
   console.log("value",value);
 
   return (
-    <>
+    <CardComponentDiv>
       <ShowCardDiv>
         <FormPageTitles title={"Show Card"} />
       </ShowCardDiv>
 
-      <CardCircleDiv>
+      <>
         <Circle />
         <Card>
           <Label>Name</Label>
@@ -26,8 +26,8 @@ const CardComponent: React.FC = () => {
           <Label>Department</Label>
           <Value>{value.department}</Value>
         </Card>
-      </CardCircleDiv>
-    </>
+      </>
+    </CardComponentDiv>
   );
 };
 

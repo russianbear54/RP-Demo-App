@@ -20,9 +20,9 @@ const ShipCardComponent: React.FC<Props> = ({ name, type, year }) => {
   return (
     <ShipCard>
       <IconDiv>       
-          <Anchor fill="#0038FE" width={31.58} />        
-          <Type fill="#0038FE" width={31.58} />     
-          <Year fill="#0038FE" width={31.58} />       
+          <Anchor fill="#0038FE" width={31.5} />        
+          <Type fill="#0038FE" width={31.5} />     
+          <Year fill="#0038FE" width={31.5} />       
       </IconDiv>
       <DetailsDiv>
         <Label>Name</Label>

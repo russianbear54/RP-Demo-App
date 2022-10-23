@@ -8,13 +8,13 @@ import { Container, FormControl, InputLabel, MenuItem, Select } from "@mui/mater
 import * as styles from "../styles/stylesMUI";
 import { useDispatch } from "react-redux";
 import { enterFields } from "../state/formSlice";
-import { FormFieldsDiv} from "../styles/FormPage/styles";
+import { FormContainer, FormFieldsDiv} from "../styles/FormPage/styles";
 
 const FormComponent: React.FC = () => {
   const dispatch = useDispatch();
 
   return (
-    <>
+    <FormContainer>
       <FormFieldsDiv>
         <FormPageTitles title={"Form Fields"} />
       </FormFieldsDiv>
@@ -88,7 +88,7 @@ const FormComponent: React.FC = () => {
           </Form>
         )}
       </Formik>
-    </>
+    </FormContainer>
   );
 };
 

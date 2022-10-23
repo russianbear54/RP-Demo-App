@@ -1,7 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
 import { useState } from "react";
 
-import { Button, ShipsCard } from "../styles/ListPage/styles";
+import { Button, ListDiv } from "../styles/ListPage/styles";
 // import { CountriesCard,Button } from '../styles/ListPage/styles'
 import CountryCardComponent from "./CountryCardComponent";
 import { countries } from "../Dummies/countries";
@@ -39,11 +39,11 @@ const countries=data.countries
 
   return (
     <>
-      <ShipsCard>
+      <ListDiv>
         {currentCountries && currentCountries.map((country:any, index:number) => (
           <CountryCardComponent name={country.name} capital={country.capital} phone={country.phone} key={index} />
         ))}
-      </ShipsCard>
+      </ListDiv>
       <Button disabled={currentCountries.length<8}
         onClick={() => {
           setCurrentPage((prev) => prev + 1);

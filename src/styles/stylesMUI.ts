@@ -1,19 +1,18 @@
 export const formStyle = {
-  position:'absolute',
+
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
-  width: "532px",
+  width: "33.25em",
   height: "605.87px",
-  top:'452.18px',
-  left:'220.41px',
+  
   
 };
 
 
 export const TextFieldStyle={
-  width:"532px",
-  height:"32px"
+  width:"30em",
+  
 }
 
 export const cardStyle = {
