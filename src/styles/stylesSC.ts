@@ -2,14 +2,13 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const NavWrapper = styled.section`
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 66.29px;
-  margin-bottom: 107.42px;
+  margin: auto;
+  margin-top:4.5em;
+  margin-bottom:5.25em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 616.2px;
+  width: 38.5em;
 `;
 
 export const Title = styled.h1`
@@ -39,7 +38,7 @@ export const NavbarLink = styled(NavLink)`
   border: none;
   text-decoration: none;
 
-  &:focus {
+  &:active {
     background-color: #000000;
     color: #ffffff;
     border-radius: 14px;
