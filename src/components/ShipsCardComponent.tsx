@@ -14,7 +14,13 @@ const GET_SHIPS = gql`
   }
 `;
 
-const PAGE_SIZE = 8;
+
+
+let PAGE_SIZE: number;
+
+
+
+window.screen.width <= 1024 ? (PAGE_SIZE = 6) : (PAGE_SIZE = 8);
 
 const ShipsCardComponent: React.FC = () => {
   const [page, setPage] = useState(0);
@@ -36,22 +42,22 @@ const ShipsCardComponent: React.FC = () => {
           ))}
       </ListDiv>
       <ButtonsDiv>
-      <Button
-        disabled={!loading && page < 1}
-        onClick={() => {
-          setPage((prev) => prev - 1);
-        }}>
-        Back
-      </Button>
-      <Button
-        disabled={!loading && data.ships.length < 8}
-        onClick={() => {
-          setPage((prev) => prev + 1);
-        }}>
-        Load More
-      </Button>
-    </ButtonsDiv>
-      </ListMain>
+        <Button
+          disabled={!loading && page < 1}
+          onClick={() => {
+            setPage((prev) => prev - 1);
+          }}>
+          Back
+        </Button>
+        <Button
+          disabled={!loading && data.ships.length < PAGE_SIZE}
+          onClick={() => {
+            setPage((prev) => prev + 1);
+          }}>
+          Load More
+        </Button>
+      </ButtonsDiv>
+    </ListMain>
   );
 };
 

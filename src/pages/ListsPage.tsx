@@ -1,6 +1,7 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 //import CountriesCardComponent from '../components/CountriesCardComponent'
 import ShipsCardComponent from "../components/ShipsCardComponent";
+import { Wrapper } from "../styles/HomePage/styles";
 import { Title } from "../styles/stylesSC";
 
 // const client = new ApolloClient({
@@ -16,12 +17,12 @@ const client = new ApolloClient({
 
 const ListsPage: React.FC = () => {
   return (
-    <>
+    <Wrapper>
       <Title>Ships List</Title>
       <ApolloProvider client={client}>
         <ShipsCardComponent />
       </ApolloProvider>
-    </>
+    </Wrapper>
   );
 };
 

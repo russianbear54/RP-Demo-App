@@ -1,94 +1,141 @@
 import styled from "styled-components";
+import { styles } from "../index";
 
-export const Wrapper=styled.div`
+export const Wrapper = styled.div`
+margin: auto;
   display: flex;
   flex-direction: column;
-  align-items:center;
-  justify-content: space-between;
-  height: 1020px;
-`
-
-
+  align-items: center;
+  justify-content: space-evenly;
+  counter-reset: instr;
+  
+`;
 
 export const Par = styled.p`
   position: relative;
-  /* font-family: "Roboto"; */
-  width: 827.18px;
-  height: 64px;
+  font-family: ${styles.color.blue.instruction};
+  width: 52em;
+  height: 4em;
   font-style: normal;
   font-weight: 400;
-  font-size: 24.3px;
-  line-height: 31.8px;
-    align-items: center;
+  font-size: 1.5em;
+  line-height: 2em;
+  align-items: center;
   text-align: center;
   letter-spacing: 0.3px;
   color: #000000;
   opacity: 0.2;
+  
+
+  ${styles.screen.iPadMini} {
+    width: 30em;
+    font-size: 1.25em;
+   
+  }
 `;
 
-export const Trio=styled.div`
-width:1536.52px;
-position:relative;
-display:flex;
-justify-content: space-between;
-`
+export const Trio = styled.div`
+
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  
+
+  ${styles.screen.iPadMini} {
+    width: 70vw;
+  }
+  
+`;
 
 export const Line = styled.div`
-  width: 1459.98px;
+  width: 91.25em;
   position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  
+  top: 5em;
+
+  ${styles.screen.largeScreen} {
+    width: 85vw;
+  }
+  ${styles.screen.smallScreen} {
+    width: 80vw;
+  }
+
+  ${styles.screen.iPadMini} {
+    width: 70vw;
+  }
 `;
 
-export const InstructionsWrapper=styled.div`
-display: flex;
-flex-direction: column;
+// INSTRUCTIONS
 
-`
+export const InstructionsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 export const Heading = styled.h1`
+  height: 2.25em;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.25em;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.461865px;
+  color: ${styles.color.blue.instruction};
 
-height: 37px;
-/* font-family: 'Roboto'; */
-font-style: normal;
-font-weight: 700;
-font-size: 36.9492px;
-line-height: 37px;
-display: flex;
-align-items: center;
-letter-spacing: 0.461865px;
-color: #3178C6;
+  ::before {
+    counter-increment: instr;
+    content: counter(instr) ".";
+  }
+
+  ${styles.screen.largeScreen} {
+    font-size: 2em;
+  }
+
+  ${styles.screen.smallScreen} {
+    font-size: 1.75em;
+  }
+
+  ${styles.screen.iPadMini} {
+    font-size: 1.25em;
+  }
 `;
-
-// export const BottomPart=styled.div`
-// gap:10px;
-// display:flex;
-// align-items: center;
-// border: 2px solid red;
-// `
 
 export const Instructions = styled.p`
-gap:10px;
-display: flex;
-width: 424.6px;
-height: 72px;
-text-align: left;
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 18.3657px;
-line-height: 24px;
-align-items: center;
-letter-spacing: 0.229571px;
-color: #3178C6;
-opacity: 0.5;
-`;
+  gap: 0.65em;
+  display: flex;
+  width: 24.5em;
+  /* height: 4.5em; */
+  text-align: left;
+  font-family: ${styles.font.card};
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25em;
+  line-height: 1.5em;
+  align-items: center;
+  letter-spacing: 0.5px;
+  color: ${styles.color.blue.instruction};
+  opacity: 0.5;
+  margin-left: 0.5em;
+  padding-left: 0.5em;
+  border-left: 2.35px solid ${styles.color.blue.instruction};
 
-export const BlueBar=styled.span`
-width: 2.34px;
-height: 100%;
-background: #3178C6;
-`
+  ${styles.screen.largeScreen} {
+    width: 13em;
+    line-height: 1em;
+    font-size: 1.5em;
+  }
+
+  ${styles.screen.smallScreen} {
+    width: 12em;
+    line-height: 1em;
+    font-size: 1.25em;
+  }
+
+  ${styles.screen.iPadMini} {
+    width: 12em;
+    line-height: 1em;
+    font-size: .75em;
+  }
+`;

@@ -1,13 +1,8 @@
-import {
-  ShipCard,
-  Label,
-  Value,
-  IconDiv,
-  DetailsDiv,
-} from "../styles/ListPage/styles";
-import { ReactComponent as Anchor } from "../images/ShipsIcons/anchor.svg";
-import { ReactComponent as Type } from "../images/ShipsIcons/type.svg";
-import { ReactComponent as Year } from "../images/ShipsIcons/year.svg";
+import { ShipCard, Label, Value, IconDiv, DetailsDiv } from "../styles/ListPage/styles";
+import { ShipsIcons } from "../images/ShipsIcons/ShipsIcons";
+import {styles} from '../styles/index'
+
+
 
 
 interface Props {
@@ -16,14 +11,16 @@ interface Props {
   year: number;
 }
 
+let WIDTH: string | number | undefined;
+window.screen.width <= 1024?WIDTH=20:WIDTH=31.5
+
 const ShipCardComponent: React.FC<Props> = ({ name, type, year }) => {
+
+const shipIcons=[ShipsIcons.anchor(WIDTH, `${styles.color.blue.regular}`), ShipsIcons.type(WIDTH, `${styles.color.blue.regular}`), ShipsIcons.year(WIDTH, `${styles.color.blue.regular}`)]
+
   return (
     <ShipCard>
-      <IconDiv>       
-          <Anchor fill="#0038FE" width={31.5} />        
-          <Type fill="#0038FE" width={31.5} />     
-          <Year fill="#0038FE" width={31.5} />       
-      </IconDiv>
+      <IconDiv>{shipIcons.map((icon,index)=><div key={index}>{icon}</div>)}</IconDiv>
       <DetailsDiv>
         <Label>Name</Label>
         <Value>{name}</Value>

@@ -1,53 +1,104 @@
 import styled from "styled-components";
+import { styles } from "../index";
 
 export const FormPageWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  
 `;
 export const FormContainer = styled.div`
-display: flex;
-flex-direction: column;
-width:30em;
-align-items: center;
-
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  width: 30em;
+  /* ${styles.screen.iPadMini}{
+    border:${styles.border.test}
+  } */
 `;
 
 export const CardComponentDiv = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-width:30em;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+  width: 30em;
+  /* ${styles.screen.iPadMini}{
+    border:${styles.border.test}
+  } */
 `;
 
 export const Split = styled.span`
- 
- height: 50em;
+  height: 40em;
   border: 1px solid #000000;
+  ${styles.screen.iPadMini}{
+   height :30em ;
+  }
 `;
 
 export const FormPageDiv = styled.div`
   display: flex;
   justify-content: center;
+
+  
 `;
 
-// export const ContainerDiv=styled.div`
-// border:3px dashed crimson;
+export const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 24.25em;
+  height: 23.25em;
+  border: 3.48px solid #0038fe;
+  border-radius: 26.08px;
+  background-color: ${styles.color.gray};
 
-// `
+  ${styles.screen.largeScreen} {
+    width: calc((1200 / 1920) * 24.25em);
+    height: calc((1200 / 1920) * 23.25em);
+    /* width: 21.25em;
+  height: 20.25em; */
+  }
 
-export const ShowCardDiv = styled.div`
-  width: 359px;
-  height: 99px;
+  ${styles.screen.smallScreen} {
+    width: calc((1024 / 1920) * 24.25em);
+    height: calc((1024 / 1920) * 23.25em);
+    /* width: 16em;
+    height: 15.25em; */
+  }
+
+  ${styles.screen.iPadMini} {
+    width: calc((768 / 1920) * 24.25em);
+
+    /* width: 12em;
+    height: 11.75em; */
+  }
 `;
-export const FormFieldsDiv = styled.div`
-  width: 399px;
-  height: 99px;
+
+export const TextDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 2.5em;
+  margin-top: 5.5em;
+  height: 100%;
+
+  ${styles.screen.largeScreen} {
+    margin-left: calc((1200 / 1920) * 2.5em);
+    margin-top: calc((1200 / 1920) * 5.5em);
+    /* height: 50%; */
+  
+  }
 `;
 
-export const CardCircleDiv = styled.div``;
+export const Pair = styled.div`
+  height: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  ${styles.screen.largeScreen}{
+    height: 2em;
+  }
+`;
 
 export const Circle = styled.div`
   position: relative;
@@ -57,42 +108,86 @@ export const Circle = styled.div`
   bottom: -4.25em;
   margin: auto;
   border-radius: 50%;
-`;
 
-export const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  width: 25em;
-  height: 25em;
-  border: 3.48px solid #0038fe;
-  border-radius: 26.08px;
-  background-color: #f2f2f2;
+  ${styles.screen.largeScreen} {
+    width: calc((1200 / 1920) * 8em);
+    height: calc((1200 / 1920) * 8em);
+    bottom: calc((1200 / 1920) * -4.25em);
+    /* width: 7em;
+    height: 7em; */
+
+    /* bottom: -3.8em; */
+  }
+
+  ${styles.screen.smallScreen} {
+    width: calc((1024 / 1920) * 8em);
+    height: calc((1024 / 1920) * 8em);
+    bottom: calc((1024 / 1920) * -4.25em);
+    /* width: 5.25em;
+    height: 5.25em;
+    bottom: -2.75em; */
+  }
+
+  ${styles.screen.iPadMini} {
+    width: calc((768 / 1920) * 8em);
+    height: calc((768 / 1920) * 8em);
+    bottom: calc((768 / 1920) * -4.25em);
+    /* width: 4.5em;
+    height: 4.5em;
+    bottom: -2.5em; */
+  }
 `;
 
 export const Label = styled.div`
-  display: flex;
-  font-family: "Roboto";
+  font-family: ${styles.font.card};
   font-style: normal;
-  align-items: center;
+  /* align-items: center; */
   font-weight: 400;
-  font-size: 20.61px;
-  line-height: 24.16px;
+  font-size: 1.25em;
   letter-spacing: 0.133273px;
-  color: #0038fe;
+  color: ${styles.color.blue.regular};
   opacity: 0.5;
-  margin-left: 41.02px;
+
+  ${styles.screen.largeScreen} {
+    font-size: calc((1200 / 1920) * 1.25em);
+  }
+
+  ${styles.screen.smallScreen} {
+    font-size: calc((1024 / 1920) * 1.25em);
+    /* font-size: 1.25em; */
+   
+  }
+
+  ${styles.screen.iPadMini} {
+    font-size: calc((768 / 1920) * 1.25em);
+    /* font-size: 1em; */
+   
+  }
 `;
 
 export const Value = styled.div`
-  display: flex;
-  font-family: "Roboto";
+  font-family: ${styles.font.regular};
   font-style: normal;
-  align-items: center;
+  /* align-items: center; */
   font-weight: 600;
-  font-size: 28.9545px;
-  line-height: 33.93px;
+  font-size: 1.812em;
   letter-spacing: 0.187208px;
-  margin-left: 41.02px;
+  /* color: ${styles.color.blue.regular}; */
   color: #0038fe;
+
+  ${styles.screen.extraLargeScreen} {
+    font-size: calc((1200 / 1920) * 1.25em);
+  }
+
+  ${styles.screen.smallScreen} {
+    font-size: calc((1024 / 1920) * 1.25em);
+    /* font-size: 1.25em; */
+    margin-left: 2em;
+  }
+
+  ${styles.screen.iPadMini} {
+    font-size: calc((768 / 1920) * 1.25em);
+    /* font-size: 1em; */
+  
+  }
 `;

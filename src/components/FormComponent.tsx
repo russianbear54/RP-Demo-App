@@ -8,17 +8,14 @@ import { Container, FormControl, InputLabel, MenuItem, Select } from "@mui/mater
 import * as styles from "../styles/stylesMUI";
 import { useDispatch } from "react-redux";
 import { enterFields } from "../state/formSlice";
-import { FormContainer, FormFieldsDiv} from "../styles/FormPage/styles";
+import { FormContainer } from "../styles/FormPage/styles";
 
 const FormComponent: React.FC = () => {
   const dispatch = useDispatch();
 
   return (
     <FormContainer>
-      <FormFieldsDiv>
-        <FormPageTitles title={"Form Fields"} />
-      </FormFieldsDiv>
-
+      <FormPageTitles title={"Form Fields"} />
       <Formik
         initialValues={{ firstName: "", lastName: "", age: "", department: "" }}
         onSubmit={(values) => {
@@ -26,9 +23,8 @@ const FormComponent: React.FC = () => {
         }}>
         {(props) => (
           <Form>
-            <Container sx={styles.formStyle}>
+            <Container maxWidth="xl" sx={styles.formStyle}>
               <TextField
-                sx={styles.TextFieldStyle}
                 id="firstName"
                 name="firstName"
                 label="First Name"
@@ -38,7 +34,6 @@ const FormComponent: React.FC = () => {
                 onChange={props.handleChange}
               />
               <TextField
-                sx={styles.TextFieldStyle}
                 id="lastName"
                 name="lastName"
                 label="Last Name"
@@ -47,16 +42,7 @@ const FormComponent: React.FC = () => {
                 value={props.values.lastName}
                 onChange={props.handleChange}
               />
-              <TextField
-                sx={styles.TextFieldStyle}
-                id="age"
-                name="age"
-                label="age"
-                type="number"
-                variant="standard"
-                value={props.values.age}
-                onChange={props.handleChange}
-              />
+              <TextField id="age" name="age" label="age" type="number" variant="standard" value={props.values.age} onChange={props.handleChange} />
               <FormControl>
                 <InputLabel id="department-label">Department</InputLabel>
                 <Select
@@ -93,5 +79,3 @@ const FormComponent: React.FC = () => {
 };
 
 export default FormComponent;
-
-//   <Container sx={styles.formStyle}></Container>
