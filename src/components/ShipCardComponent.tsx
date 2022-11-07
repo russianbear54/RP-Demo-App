@@ -1,5 +1,5 @@
 import { ShipCard, Label, Value, IconDiv, DetailsDiv } from "../styles/ListPage/styles";
-import { ShipsIcons } from "../images/ShipsIcons/ShipsIcons";
+import { ShipsIcons } from "../images/ShipsIcons";
 import {styles} from '../styles/index'
 
 

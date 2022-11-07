@@ -2,13 +2,12 @@ import styled from "styled-components";
 import { styles } from "../index";
 
 export const Wrapper = styled.div`
-margin: auto;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   counter-reset: instr;
-  
 `;
 
 export const Par = styled.p`
@@ -25,26 +24,21 @@ export const Par = styled.p`
   letter-spacing: 0.3px;
   color: #000000;
   opacity: 0.2;
-  
 
   ${styles.screen.iPadMini} {
     width: 30em;
     font-size: 1.25em;
-   
   }
 `;
 
 export const Trio = styled.div`
-
   position: relative;
   display: flex;
   justify-content: space-between;
-  
 
   ${styles.screen.iPadMini} {
     width: 70vw;
   }
-  
 `;
 
 export const Line = styled.div`
@@ -136,6 +130,6 @@ export const Instructions = styled.p`
   ${styles.screen.iPadMini} {
     width: 12em;
     line-height: 1em;
-    font-size: .75em;
+    font-size: 0.75em;
   }
 `;

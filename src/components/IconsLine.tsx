@@ -1,5 +1,5 @@
 import { Line } from "../styles/HomePage/styles";
-import { ToolsIcons } from "../images/ToolsIcons/ToolsIcons";
+import { ToolsIcons } from "../images/ToolsIcons";
 import { useEffect, useState } from "react";
 
 function getWindowSize() {
@@ -26,7 +26,7 @@ const IconsLine: React.FC = () => {
 
   console.log(width);
 
-  let height = 90;
+  let height = 80;
 
   if (width <= 1200) {
     height = 70;

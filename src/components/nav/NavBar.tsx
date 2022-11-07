@@ -9,8 +9,11 @@ const NavBar: React.FC = () => {
       <NavbarLink className={({ isActive }) => (isActive ? "active" : undefined)} to="/form">
         Form
       </NavbarLink>
-      <NavbarLink className={({ isActive }) => (isActive ? "active" : undefined)} to="/lists">
-        Lists
+      <NavbarLink className={({ isActive }) => (isActive ? "active" : undefined)} to="/ships">
+        Ships
+      </NavbarLink>
+      <NavbarLink className={({ isActive }) => (isActive ? "active" : undefined)} to="/countries">
+        Countries
       </NavbarLink>
     </NavWrapper>
   );

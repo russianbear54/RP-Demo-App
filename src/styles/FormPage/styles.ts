@@ -8,38 +8,37 @@ export const FormPageWrapper = styled.div`
 `;
 export const FormContainer = styled.div`
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
+
   align-items: center;
   width: 30em;
-  /* ${styles.screen.iPadMini}{
-    border:${styles.border.test}
-  } */
+  ${styles.screen.iPadMini} {
+    width: 18em;
+  }
 `;
 
-export const CardComponentDiv = styled.div`
+export const CardComponentContainer = styled.div`
   display: flex;
   flex-direction: column;
+
   align-items: center;
- 
   width: 30em;
-  /* ${styles.screen.iPadMini}{
-    border:${styles.border.test}
-  } */
+  ${styles.screen.iPadMini} {
+    width: 18em;
+  }
 `;
 
 export const Split = styled.span`
   height: 40em;
   border: 1px solid #000000;
-  ${styles.screen.iPadMini}{
-   height :30em ;
+  ${styles.screen.iPadMini} {
+    height: 30em;
   }
 `;
 
 export const FormPageDiv = styled.div`
   display: flex;
   justify-content: center;
-
-  
 `;
 
 export const Card = styled.div`
@@ -66,10 +65,10 @@ export const Card = styled.div`
   }
 
   ${styles.screen.iPadMini} {
-    width: calc((768 / 1920) * 24.25em);
+    /* width: calc((768 / 1920) * 24.25em); */
 
-    /* width: 12em;
-    height: 11.75em; */
+    width: 12em;
+    height: 11.75em;
   }
 `;
 
@@ -85,7 +84,6 @@ export const TextDiv = styled.div`
     margin-left: calc((1200 / 1920) * 2.5em);
     margin-top: calc((1200 / 1920) * 5.5em);
     /* height: 50%; */
-  
   }
 `;
 
@@ -95,7 +93,7 @@ export const Pair = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  ${styles.screen.largeScreen}{
+  ${styles.screen.largeScreen} {
     height: 2em;
   }
 `;
@@ -155,13 +153,11 @@ export const Label = styled.div`
   ${styles.screen.smallScreen} {
     font-size: calc((1024 / 1920) * 1.25em);
     /* font-size: 1.25em; */
-   
   }
 
   ${styles.screen.iPadMini} {
-    font-size: calc((768 / 1920) * 1.25em);
-    /* font-size: 1em; */
-   
+    /* font-size: calc((768 / 1920) * 1.25em); */
+    font-size: 1em;
   }
 `;
 
@@ -188,6 +184,5 @@ export const Value = styled.div`
   ${styles.screen.iPadMini} {
     font-size: calc((768 / 1920) * 1.25em);
     /* font-size: 1em; */
-  
   }
 `;

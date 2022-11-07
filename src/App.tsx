@@ -5,6 +5,7 @@ import NavBar from './components/nav/NavBar';
 import FormPage from './pages/FormPage';
 import ListsPage from './pages/ListsPage';
 import { Route, Routes } from 'react-router-dom';
+import CountriesPage from './pages/CountriesPage';
 
 
 const App:React.FC=()=> {
@@ -14,7 +15,9 @@ const App:React.FC=()=> {
       <Routes>
         <Route path="/home" element={<HomePage />}/>
         <Route path="/form" element={<FormPage/>}/>
-        <Route path="/lists" element={<ListsPage/>}/>
+        <Route path="/ships" element={<ListsPage/>}/>
+        <Route path="/countries" element={<CountriesPage/>}/>
+
       </Routes>
       
       

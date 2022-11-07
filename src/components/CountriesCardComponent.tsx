@@ -6,6 +6,7 @@ import { Button, ListDiv } from "../styles/ListPage/styles";
 import CountryCardComponent from "./CountryCardComponent";
 import { countries } from "../Dummies/countries";
 
+
 const GET_COUNTRIES=gql`
 query GetAllCountries{
   countries {
@@ -20,12 +21,19 @@ query GetAllCountries{
 
 const CountriesCardComponent: React.FC = () => {
   const {loading, data} = useQuery(GET_COUNTRIES);
+
+  console.log('data',data)
+
+  // localStorage.setItem('countries',data.countries)
+
+  // const counts=localStorage.getItem('countries')
+  // console.log('counts',counts);
  
   const [currentPage, setCurrentPage] = useState(1);
   const [resultsPerPage] = useState(8);
 
-const countries=data.countries
- console.log("countries",countries)
+// const countries=data.countries
+//  console.log("countries",countries)
 
 
 
@@ -33,7 +41,7 @@ const countries=data.countries
   const indexOfFirstCountry = indexOfLastCountry - resultsPerPage;
   const currentCountries = countries.slice(indexOfFirstCountry, indexOfLastCountry);
 
-  console.log("currentCountries", currentCountries);
+  // console.log("currentCountries", currentCountries);
 
 
 

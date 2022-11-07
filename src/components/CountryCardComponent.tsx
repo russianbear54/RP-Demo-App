@@ -1,8 +1,8 @@
 import React from "react";
 import { DetailsDiv, IconDiv, Label, ShipCard, Value } from "../styles/ListPage/styles";
-import { ReactComponent as GLobe } from "../images/CountriesIcons/globe.svg";
-import { ReactComponent as Location } from "../images/CountriesIcons/location.svg";
-import { ReactComponent as Phone } from "../images/CountriesIcons/phone.svg";
+import {CountriesIcons} from "../images/CountriesIcons"
+import { styles } from "../styles";
+
 
 interface Props {
   name: string;
@@ -10,14 +10,16 @@ interface Props {
   phone: string;
 }
 
+let WIDTH: string | number | undefined;
+window.screen.width <= 1024?WIDTH=20:WIDTH=31.5
+
 const CountryCardComponent: React.FC<Props> = ({ name, capital, phone }) => {
+
+  const countriesIcons=[CountriesIcons.globe(WIDTH, `${styles.color.blue.regular}`), CountriesIcons.location(WIDTH, `${styles.color.blue.regular}`), CountriesIcons.phone(WIDTH, `${styles.color.blue.regular}`)]
+
   return (
     <ShipCard>
-      <IconDiv>
-        <GLobe fill="#0038FE" width={31.58} />
-        <Location fill="#0038FE" width={31.58} />
-        <Phone fill="#0038FE" width={31.58} />
-      </IconDiv>
+      <IconDiv>{countriesIcons.map((icon,index)=><div key={index}>{icon}</div>)}</IconDiv>
       <DetailsDiv>
         <Label>Name</Label>
         <Value>{name}</Value>

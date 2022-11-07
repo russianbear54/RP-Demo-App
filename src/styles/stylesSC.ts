@@ -25,13 +25,18 @@ export const NavWrapper = styled.section`
 `;
 
 export const Title = styled.h1`
+
+height: 5.4375em;
   position: relative;
   height: 1.25em;
   font-family: ${styles.font.regular};
   font-style: normal;
   font-weight: 400;
   font-size: 4.75em;
+
   color: #000000;
+
+
 
   ${styles.screen.smallScreen} {
     font-size: 3em;

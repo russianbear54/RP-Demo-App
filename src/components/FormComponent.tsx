@@ -23,8 +23,9 @@ const FormComponent: React.FC = () => {
         }}>
         {(props) => (
           <Form>
-            <Container maxWidth="xl" sx={styles.formStyle}>
-              <TextField
+            <Container sx={styles.formStyle}>
+              <TextField sx={styles.textFieldStyle}
+              size='small'
                 id="firstName"
                 name="firstName"
                 label="First Name"
@@ -33,7 +34,7 @@ const FormComponent: React.FC = () => {
                 value={props.values.firstName}
                 onChange={props.handleChange}
               />
-              <TextField
+              <TextField sx={styles.textFieldStyle}
                 id="lastName"
                 name="lastName"
                 label="Last Name"
@@ -42,7 +43,7 @@ const FormComponent: React.FC = () => {
                 value={props.values.lastName}
                 onChange={props.handleChange}
               />
-              <TextField id="age" name="age" label="age" type="number" variant="standard" value={props.values.age} onChange={props.handleChange} />
+              <TextField sx={styles.textFieldStyle} id="age" name="age" label="age" type="number" variant="standard" value={props.values.age} onChange={props.handleChange} />
               <FormControl>
                 <InputLabel id="department-label">Department</InputLabel>
                 <Select

@@ -17,6 +17,7 @@
     "@types/react-dom": "^18.0.6",
     "@types/styled-components": "^5.1.26",
     "apollo-cache-persist": "^0.1.1",
+    "apollo3-cache-persist": "^0.14.1",
     "formik": "^2.2.9",
     "graphql": "^16.6.0",
     "react": "^18.2.0",
