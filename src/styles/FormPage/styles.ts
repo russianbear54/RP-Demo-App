@@ -5,26 +5,48 @@ export const FormPageWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+
+  ${styles.screen.mobileLG}{
+    flex-direction: column;
+  
+  }
 `;
+
+
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
-
   align-items: center;
   width: 30em;
+
+
   ${styles.screen.iPadMini} {
     width: 18em;
   }
+
+  ${styles.screen.mobileLG}{
+    width:100%;
+    
+   
+  }
+  
+
 `;
 
 export const CardComponentContainer = styled.div`
   display: flex;
   flex-direction: column;
-
   align-items: center;
   width: 30em;
+ 
+
   ${styles.screen.iPadMini} {
     width: 18em;
+    height: 23em;
+    justify-content: space-between;
+  }
+  ${styles.screen.mobileLG}{
+    width:100%;
   }
 `;
 
@@ -34,12 +56,27 @@ export const Split = styled.span`
   ${styles.screen.iPadMini} {
     height: 30em;
   }
+
+  ${styles.screen.mobileLG}{
+    width: 20em;
+    height: 0;
+    transform: rotate(90deg);
+    display: none;
+  }
 `;
 
 export const FormPageDiv = styled.div`
   display: flex;
   justify-content: center;
 `;
+
+// export const CardDiv=styled.div`
+// border: ${styles.border.test};
+
+// ${styles.screen.iPadMini}{
+//   bottom:5em;
+// }
+// `
 
 export const Card = styled.div`
   display: flex;
@@ -51,17 +88,17 @@ export const Card = styled.div`
   background-color: ${styles.color.gray};
 
   ${styles.screen.largeScreen} {
-    width: calc((1200 / 1920) * 24.25em);
-    height: calc((1200 / 1920) * 23.25em);
-    /* width: 21.25em;
-  height: 20.25em; */
+    /* width: calc((1200 / 1920) * 24.25em);
+    height: calc((1200 / 1920) * 23.25em); */
+    width: 21.25em;
+  height: 20.25em;
   }
 
   ${styles.screen.smallScreen} {
-    width: calc((1024 / 1920) * 24.25em);
-    height: calc((1024 / 1920) * 23.25em);
-    /* width: 16em;
-    height: 15.25em; */
+    /* width: calc((1024 / 1920) * 24.25em);
+    height: calc((1024 / 1920) * 23.25em); */
+    width: 16em;
+    height: 15.25em;
   }
 
   ${styles.screen.iPadMini} {
@@ -69,6 +106,12 @@ export const Card = styled.div`
 
     width: 12em;
     height: 11.75em;
+    bottom:3em;
+  }
+
+  ${styles.screen.mobileLG}{
+    width: 65vw;
+    height: 18em;
   }
 `;
 
@@ -84,6 +127,10 @@ export const TextDiv = styled.div`
     margin-left: calc((1200 / 1920) * 2.5em);
     margin-top: calc((1200 / 1920) * 5.5em);
     /* height: 50%; */
+  }
+
+  ${styles.screen.mobileLG}{
+    margin-bottom: 2em;
   }
 `;
 
@@ -134,6 +181,12 @@ export const Circle = styled.div`
     height: 4.5em;
     bottom: -2.5em; */
   }
+
+  ${styles.screen.mobileLG}{
+    width:5em;
+    height: 5em;
+    bottom: -2.65em;
+  }
 `;
 
 export const Label = styled.div`
@@ -159,6 +212,11 @@ export const Label = styled.div`
     /* font-size: calc((768 / 1920) * 1.25em); */
     font-size: 1em;
   }
+
+  ${styles.screen.mobileLG}{
+    font-size: 1.25em;
+    
+  }
 `;
 
 export const Value = styled.div`
@@ -168,8 +226,8 @@ export const Value = styled.div`
   font-weight: 600;
   font-size: 1.812em;
   letter-spacing: 0.187208px;
-  /* color: ${styles.color.blue.regular}; */
-  color: #0038fe;
+  color: ${styles.color.blue.regular};
+  /* color: #0038FE; */
 
   ${styles.screen.extraLargeScreen} {
     font-size: calc((1200 / 1920) * 1.25em);
@@ -184,5 +242,13 @@ export const Value = styled.div`
   ${styles.screen.iPadMini} {
     font-size: calc((768 / 1920) * 1.25em);
     /* font-size: 1em; */
+    margin-bottom: 1em;
+  }
+
+  ${styles.screen.mobileLG}{
+    font-size: 1.25em;
+    margin-left: 0;
+   
+    
   }
 `;

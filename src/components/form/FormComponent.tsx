@@ -1,14 +1,12 @@
 import React from "react";
-
 import FormPageTitles from "./FormPageTitles";
 import TextField from "@mui/material/TextField";
 import { Form, Formik } from "formik";
-
 import { Container, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import * as styles from "../styles/stylesMUI";
+import * as styles from "../../styles/stylesMUI";
 import { useDispatch } from "react-redux";
-import { enterFields } from "../state/formSlice";
-import { FormContainer } from "../styles/FormPage/styles";
+import { enterFields } from "../../state/formSlice";
+import { FormContainer } from "../../styles/FormPage/styles";
 
 const FormComponent: React.FC = () => {
   const dispatch = useDispatch();
@@ -24,8 +22,8 @@ const FormComponent: React.FC = () => {
         {(props) => (
           <Form>
             <Container sx={styles.formStyle}>
-              <TextField sx={styles.textFieldStyle}
-              size='small'
+              <TextField
+                sx={styles.textFieldStyle}
                 id="firstName"
                 name="firstName"
                 label="First Name"
@@ -34,7 +32,8 @@ const FormComponent: React.FC = () => {
                 value={props.values.firstName}
                 onChange={props.handleChange}
               />
-              <TextField sx={styles.textFieldStyle}
+              <TextField
+                sx={styles.textFieldStyle}
                 id="lastName"
                 name="lastName"
                 label="Last Name"
@@ -43,7 +42,16 @@ const FormComponent: React.FC = () => {
                 value={props.values.lastName}
                 onChange={props.handleChange}
               />
-              <TextField sx={styles.textFieldStyle} id="age" name="age" label="age" type="number" variant="standard" value={props.values.age} onChange={props.handleChange} />
+              <TextField
+                sx={styles.textFieldStyle}
+                id="age"
+                name="age"
+                label="age"
+                type="number"
+                variant="standard"
+                value={props.values.age}
+                onChange={props.handleChange}
+              />
               <FormControl>
                 <InputLabel id="department-label">Department</InputLabel>
                 <Select

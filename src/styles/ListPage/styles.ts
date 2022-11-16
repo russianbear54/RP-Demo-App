@@ -25,6 +25,12 @@ export const ListDiv = styled.div`
     width: 70vw;
     justify-content: space-around;
   }
+
+  ${styles.screen.mobileLG}{
+    width: 95vw;
+    gap:1em;
+ 
+  }
 `;
 
 export const ShipCard = styled.div`
@@ -32,7 +38,7 @@ export const ShipCard = styled.div`
   color: ${styles.color.blue.regular};
   width: 20em;
   height: 14em;
-  background: ${styles.color.lightGray};
+  background: ${styles.color.gray.lightGray};
   box-shadow: 0px 3.49584px 13.9834px -3.49584px rgba(0, 0, 0, 0.25);
   border-radius: 11.6939px;
 
@@ -45,6 +51,12 @@ export const ShipCard = styled.div`
     width: 15em;
     height: 10em;
   }
+
+  ${styles.screen.mobileLG}{
+    width: 10em;
+    height: 7em;
+
+  }
 `;
 
 export const IconDiv = styled.div`
@@ -52,6 +64,12 @@ export const IconDiv = styled.div`
   flex-direction: column;
   justify-content: space-around;
   padding: 1em;
+
+  ${styles.screen.mobileLG}{
+    padding: .25em;
+    padding-left: 1em;
+  }
+
 `;
 export const Label = styled.div`
   font-family: ${styles.font.card};
@@ -71,6 +89,10 @@ export const Label = styled.div`
   ${styles.screen.iPadMini} {
     font-size: 0.75em;
   }
+
+  /* ${styles.screen.mobileLG}{
+    font-size: .5em;
+  } */
 `;
 
 export const Value = styled.div`
@@ -88,6 +110,9 @@ export const Value = styled.div`
   ${styles.screen.iPadMini} {
     font-size: 1em;
   }
+  ${styles.screen.mobileLG}{
+    font-size: .75em;
+  }
 `;
 
 export const DetailsDiv = styled.div`
@@ -96,6 +121,13 @@ export const DetailsDiv = styled.div`
   align-items: flex-start;
   justify-content: space-around;
   margin: 1em;
+
+  ${styles.screen.mobileLG}{
+    justify-content: space-between;
+    font-size: .75em;
+    margin: .5em;
+  }
+
 `;
 export const ButtonsDiv = styled.div`
   position: relative;
@@ -120,7 +152,7 @@ export const Button = styled.button`
   font-size: 2em;
   /* line-height: 35px; */
   background: ${styles.color.blue.regular};
-  color: #ffffff;
+  color: ${styles.color.white};
   width: 6em;
   /* height: 2em; */
   border-radius: 14px;
@@ -143,9 +175,9 @@ export const CountryCard = styled.div`
   display: flex;
   flex-direction: column;
   color: ${styles.color.blue.regular};
-  width: 304.94px;
-  height: 224.94px;
-  background: ${styles.color.lightGray};
+  width: 19em;
+  height: 14em;
+  background: ${styles.color.gray.lightGray};
   box-shadow: 0px 3.49584px 13.9834px -3.49584px rgba(0, 0, 0, 0.25);
   border-radius: 11.6939px;
   margin: auto;

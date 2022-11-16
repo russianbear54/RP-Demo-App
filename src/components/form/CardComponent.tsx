@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectForm } from "../state/formSlice";
-import { Circle, Card, Label, Value, CardComponentContainer, TextDiv, Pair } from "../styles/FormPage/styles";
+import { selectForm } from "../../state/formSlice";
+import { Circle, Card, Label, Value, CardComponentContainer, TextDiv, Pair,  } from "../../styles/FormPage/styles";
 import FormPageTitles from "./FormPageTitles";
 
 const CardComponent: React.FC = () => {

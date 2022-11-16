@@ -1,5 +1,5 @@
-import CardComponent from "../components/CardComponent";
-import FormComponent from "../components/FormComponent";
+import CardComponent from "../components/form/CardComponent";
+import FormComponent from "../components/form/FormComponent";
 import {  FormPageWrapper, Split } from "../styles/FormPage/styles";
 
 

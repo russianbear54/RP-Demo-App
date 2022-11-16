@@ -1,6 +1,6 @@
 import React from "react";
-import IconsLine from "../components/IconsLine";
-import PageInstruction from "../components/PageInstruction";
+import IconsLine from "../components/homePage/IconsLine";
+import PageInstruction from "../components/homePage/PageInstruction";
 import { Wrapper, Par, Trio } from "../styles/HomePage/styles";
 import { Title } from "../styles/stylesSC";
 import { instructions } from "../Dummies/homePageInstructions";

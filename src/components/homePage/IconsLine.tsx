@@ -1,6 +1,7 @@
-import { Line } from "../styles/HomePage/styles";
-import { ToolsIcons } from "../images/ToolsIcons";
+import { Line } from "../../styles/HomePage/styles";
+import { ToolsIcons } from "../../images/ToolsIcons";
 import { useEffect, useState } from "react";
+import {styles} from '../../styles/index'
 
 function getWindowSize() {
   const { innerWidth, innerHeight } = window;
@@ -40,16 +41,20 @@ const IconsLine: React.FC = () => {
     height = 40;
   }
 
+  // if (width <= 500) {
+  //   height = 30;
+  // }
+
   const logos = [
-    ToolsIcons.react(height, "#CDCDCD"),
-    ToolsIcons.redux(height, "#CDCDCD"),
-    ToolsIcons.typeScript(height, "#CDCDCD"),
-    ToolsIcons.graphQL(height, "#CDCDCD"),
-    ToolsIcons.apolloGraphQL(height, "#CDCDCD"),
-    ToolsIcons.reactRouter(height, "#CDCDCD"),
-    ToolsIcons.styledComponents(height, "#CDCDCD"),
-    ToolsIcons.mui(height, "#CDCDCD"),
-    ToolsIcons.formik(height, "#CDCDCD"),
+    ToolsIcons.react(height, `${styles.color.gray.lightGray2}`),
+    ToolsIcons.redux(height, `${styles.color.gray.lightGray2}`),
+    ToolsIcons.typeScript(height, `${styles.color.gray.lightGray2}`),
+    ToolsIcons.graphQL(height, `${styles.color.gray.lightGray2}`),
+    ToolsIcons.apolloGraphQL(height, `${styles.color.gray.lightGray2}`),
+    ToolsIcons.reactRouter(height, `${styles.color.gray.lightGray2}`),
+    ToolsIcons.styledComponents(height, `${styles.color.gray.lightGray2}`),
+    ToolsIcons.mui(height, `${styles.color.gray.lightGray2}`),
+    ToolsIcons.formik(height, `${styles.color.gray.lightGray2}`),
   ];
 
   return <Line>{logos.map((logo,index)=><div key={index}>{logo}</div>)}</Line>;

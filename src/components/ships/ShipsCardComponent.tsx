@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { gql, useQuery } from "@apollo/client";
-import { Button, ButtonsDiv, ListDiv, ListMain } from "../styles/ListPage/styles";
+import { Button, ButtonsDiv, ListDiv, ListMain } from "../../styles/ListPage/styles";
 import ShipCardComponent from "./ShipCardComponent";
-// import ButtonsComponent from "./nav/Buttons";
+
 
 const GET_SHIPS = gql`
   query ListShips($limit: Int!, $offset: Int!) {
@@ -14,13 +14,24 @@ const GET_SHIPS = gql`
   }
 `;
 
-
-
 let PAGE_SIZE: number;
 
+const WindowWidth = window.screen.width;
 
 
-window.screen.width <= 1024 ? (PAGE_SIZE = 6) : (PAGE_SIZE = 8);
+
+if(WindowWidth > 1024){
+  PAGE_SIZE = 8; 
+}
+
+if(WindowWidth <= 1024){
+  PAGE_SIZE = 6; 
+}
+
+if(WindowWidth <= 428){
+  PAGE_SIZE = 8; 
+}
+
 
 const ShipsCardComponent: React.FC = () => {
   const [page, setPage] = useState(0);

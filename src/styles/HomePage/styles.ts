@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-evenly;
   counter-reset: instr;
+
 `;
 
 export const Par = styled.p`
@@ -29,6 +30,11 @@ export const Par = styled.p`
     width: 30em;
     font-size: 1.25em;
   }
+  ${styles.screen.mobileLG}{
+    width:75vw;
+    font-size: .75em;
+    
+  }
 `;
 
 export const Trio = styled.div`
@@ -38,6 +44,11 @@ export const Trio = styled.div`
 
   ${styles.screen.iPadMini} {
     width: 70vw;
+  }
+
+  ${styles.screen.mobileLG}{
+    display: block;
+    
   }
 `;
 
@@ -58,6 +69,13 @@ export const Line = styled.div`
 
   ${styles.screen.iPadMini} {
     width: 70vw;
+  
+  }
+
+  ${styles.screen.mobileLG}{
+    flex-wrap: wrap;
+    gap:1em;
+   top: 2em;
   }
 `;
 
@@ -66,6 +84,7 @@ export const Line = styled.div`
 export const InstructionsWrapper = styled.div`
   display: flex;
   flex-direction: column;
+
 `;
 
 export const Heading = styled.h1`
@@ -93,6 +112,11 @@ export const Heading = styled.h1`
 
   ${styles.screen.iPadMini} {
     font-size: 1.25em;
+    
+  }
+
+  ${styles.screen.mobileLG}{
+    height: 1.5em;
   }
 `;
 
@@ -131,5 +155,11 @@ export const Instructions = styled.p`
     width: 12em;
     line-height: 1em;
     font-size: 0.75em;
+  }
+
+  ${styles.screen.mobileLG}{
+    width: 65vw;
+    font-size: 1em;
+    
   }
 `;

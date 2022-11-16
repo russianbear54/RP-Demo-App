@@ -1,5 +1,5 @@
 import React from "react";
-import {  Heading, Instructions, InstructionsWrapper } from "../styles/HomePage/styles";
+import {  Heading, Instructions, InstructionsWrapper } from "../../styles/HomePage/styles";
 
 type Props = {
   text: string;
