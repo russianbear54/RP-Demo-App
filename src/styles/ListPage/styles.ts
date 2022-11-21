@@ -16,6 +16,11 @@ export const ListDiv = styled.div`
   justify-content: space-between;
   gap: 2em;
 
+  ${styles.screen.largeScreen}{
+    width: 80vw;
+    justify-content: space-around;
+  }
+
   ${styles.screen.smallScreen} {
     width: 80vw;
     justify-content: space-around;
@@ -26,14 +31,14 @@ export const ListDiv = styled.div`
     justify-content: space-around;
   }
 
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     width: 95vw;
     gap:1em;
  
   }
 `;
 
-export const ShipCard = styled.div`
+export const InfoCard = styled.div`
   display: flex;
   color: ${styles.color.blue.regular};
   width: 20em;
@@ -41,6 +46,11 @@ export const ShipCard = styled.div`
   background: ${styles.color.gray.lightGray};
   box-shadow: 0px 3.49584px 13.9834px -3.49584px rgba(0, 0, 0, 0.25);
   border-radius: 11.6939px;
+
+  ${styles.screen.largeScreen}{
+    width: 18em;
+    height: 12em;
+  }
 
   ${styles.screen.smallScreen} {
     width: 12em;
@@ -52,7 +62,7 @@ export const ShipCard = styled.div`
     height: 10em;
   }
 
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     width: 10em;
     height: 7em;
 
@@ -65,7 +75,7 @@ export const IconDiv = styled.div`
   justify-content: space-around;
   padding: 1em;
 
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     padding: .25em;
     padding-left: 1em;
   }
@@ -90,7 +100,7 @@ export const Label = styled.div`
     font-size: 0.75em;
   }
 
-  /* ${styles.screen.mobileLG}{
+  /* ${styles.screen.mobileLarge}{
     font-size: .5em;
   } */
 `;
@@ -110,7 +120,7 @@ export const Value = styled.div`
   ${styles.screen.iPadMini} {
     font-size: 1em;
   }
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     font-size: .75em;
   }
 `;
@@ -122,7 +132,7 @@ export const DetailsDiv = styled.div`
   justify-content: space-around;
   margin: 1em;
 
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     justify-content: space-between;
     font-size: .75em;
     margin: .5em;
@@ -153,8 +163,8 @@ export const Button = styled.button`
   /* line-height: 35px; */
   background: ${styles.color.blue.regular};
   color: ${styles.color.white};
-  width: 6em;
-  /* height: 2em; */
+  width: 6.6em;
+  height: 2em;
   border-radius: 14px;
 
   ${styles.screen.smallScreen} {
@@ -171,14 +181,14 @@ export const Button = styled.button`
 
 ///// COUNTRIES
 
-export const CountryCard = styled.div`
-  display: flex;
-  flex-direction: column;
-  color: ${styles.color.blue.regular};
-  width: 19em;
-  height: 14em;
-  background: ${styles.color.gray.lightGray};
-  box-shadow: 0px 3.49584px 13.9834px -3.49584px rgba(0, 0, 0, 0.25);
-  border-radius: 11.6939px;
-  margin: auto;
-`;
+// export const CountryCard = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   color: ${styles.color.blue.regular};
+//   width: 19em;
+//   height: 14em;
+//   background: ${styles.color.gray.lightGray};
+//   box-shadow: 0px 3.49584px 13.9834px -3.49584px rgba(0, 0, 0, 0.25);
+//   border-radius: 11.6939px;
+//   margin: auto;
+// `;

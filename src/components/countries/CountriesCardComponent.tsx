@@ -1,6 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
-import { useEffect, useState } from "react";
-import { Button, ButtonsDiv, ListDiv, ListMain } from "../../styles/ListPage/styles";
+import {  useEffect, useState } from "react";
+import { ListDiv, ListMain } from "../../styles/ListPage/styles";
+import Buttons from "../buttons/Buttons";
 import CountryCardComponent from "./CountryCardComponent";
 
 const GET_COUNTRIES = gql`
@@ -13,12 +14,16 @@ const GET_COUNTRIES = gql`
   }
 `;
 
-let PAGE_SIZE: number;
+let PAGE_SIZE;
 
 const WindowWidth = window.screen.width;
 
-if (WindowWidth > 1024) {
+if (WindowWidth > 1200) {
   PAGE_SIZE = 8;
+}
+
+if (WindowWidth <= 1200) {
+  PAGE_SIZE = 9;
 }
 
 if (WindowWidth <= 1024) {
@@ -29,10 +34,12 @@ if (WindowWidth <= 428) {
   PAGE_SIZE = 8;
 }
 
+
+
 const CountriesCardComponent: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [countries, setCountries] = useState([]);
-  const { loading, data } = useQuery(GET_COUNTRIES);
+  const { data } = useQuery(GET_COUNTRIES);
 
   const indexOfLastCountry = currentPage * PAGE_SIZE;
   const indexOfFirstCountry = indexOfLastCountry - PAGE_SIZE;
@@ -45,6 +52,11 @@ const CountriesCardComponent: React.FC = () => {
 
   const currentCountries = countries.slice(indexOfFirstCountry, indexOfLastCountry);
 
+
+   const buttonProps={currPage:currentPage,setCurrPage:setCurrentPage,pageSize:PAGE_SIZE,currCountries:currentCountries,countries:true}
+
+
+
   return (
     <ListMain>
       <ListDiv>
@@ -53,24 +65,10 @@ const CountriesCardComponent: React.FC = () => {
             <CountryCardComponent name={country.name} capital={country.capital} phone={country.phone} key={index} />
           ))}
       </ListDiv>
-      <ButtonsDiv>
-        <Button
-          disabled={currentPage === 1}
-          onClick={() => {
-            setCurrentPage((prev) => prev - 1);
-          }}>
-          Back
-        </Button>
-        <Button
-          disabled={currentCountries.length < PAGE_SIZE}
-          onClick={() => {
-            setCurrentPage((prev) => prev + 1);
-          }}>
-          Load More
-        </Button>
-      </ButtonsDiv>
+      <Buttons {...buttonProps}  />
     </ListMain>
   );
 };
 
 export default CountriesCardComponent;
+

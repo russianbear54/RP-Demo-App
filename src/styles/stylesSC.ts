@@ -11,7 +11,7 @@ export const NavButtonWrapper = styled.section`
   justify-content: space-between;
   width: 38.5em;
 
-  ${styles.screen.mobileLG} {
+  ${styles.screen.mobileLarge} {
     display: none;
   }
 
@@ -30,7 +30,7 @@ export const HamburgerNav = styled.nav`
   display: none;
  
 
-  ${styles.screen.mobileLG} {
+  ${styles.screen.mobileLarge} {
     display: block;
  
   }
@@ -51,7 +51,7 @@ border: none;
   transform: translateY(-50%);
   display: none;
 
-  ${styles.screen.mobileLG} {
+  ${styles.screen.mobileLarge} {
     display: block;
   }
 `;
@@ -74,6 +74,10 @@ export const Title = styled.h1`
   font-weight: 400;
   font-size: 4.75em;
   color: ${styles.color.black};
+
+  ${styles.screen.largeScreen} {
+    font-size: 4em;
+  }
 
   ${styles.screen.smallScreen} {
     font-size: 3em;

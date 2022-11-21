@@ -25,7 +25,6 @@ const IconsLine: React.FC = () => {
 
   const width = windowSize.innerWidth;
 
-  console.log(width);
 
   let height = 80;
 
@@ -41,9 +40,7 @@ const IconsLine: React.FC = () => {
     height = 40;
   }
 
-  // if (width <= 500) {
-  //   height = 30;
-  // }
+
 
   const logos = [
     ToolsIcons.react(height, `${styles.color.gray.lightGray2}`),

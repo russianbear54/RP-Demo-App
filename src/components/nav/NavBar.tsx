@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import {  useState } from "react";
 
 import { BurgersIcons } from "../../images/BurgersIcons";
 import { styles } from "../../styles";
@@ -7,6 +7,9 @@ import { HamburgerButton, HamburgerNav, HamburgerNavbarLink, HamburgerNavigation
 
 const NavBar: React.FC = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+  console.log('I rendered!');
+
+
 
   return (
     <>
@@ -23,7 +26,7 @@ const NavBar: React.FC = () => {
 
             <HamburgerNavbarLink to="/form">Form</HamburgerNavbarLink>
 
-            {/* <HamburgerNavbarLink to="/ships">Ships</HamburgerNavbarLink> */}
+            <HamburgerNavbarLink to="/ships">Ships</HamburgerNavbarLink>
 
             <HamburgerNavbarLink to="/countries">Countries</HamburgerNavbarLink>
           </HamburgerNavigationItems>
@@ -36,9 +39,9 @@ const NavBar: React.FC = () => {
         <NavbarLink className={({ isActive }) => (isActive ? "active" : undefined)} to="/form">
           Form
         </NavbarLink>
-        {/* <NavbarLink className={({ isActive }) => (isActive ? "active" : undefined)} to="/ships">
+        <NavbarLink className={({ isActive }) => (isActive ? "active" : undefined)} to="/ships">
           Ships
-        </NavbarLink> */}
+        </NavbarLink>
         <NavbarLink className={({ isActive }) => (isActive ? "active" : undefined)} to="/countries">
           Countries
         </NavbarLink>
@@ -48,3 +51,6 @@ const NavBar: React.FC = () => {
 };
 
 export default NavBar;
+
+
+// to={`${"/home"}`||`${"/"}`}

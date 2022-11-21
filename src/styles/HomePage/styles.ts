@@ -30,7 +30,7 @@ export const Par = styled.p`
     width: 30em;
     font-size: 1.25em;
   }
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     width:75vw;
     font-size: .75em;
     
@@ -46,7 +46,7 @@ export const Trio = styled.div`
     width: 70vw;
   }
 
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     display: block;
     
   }
@@ -72,7 +72,7 @@ export const Line = styled.div`
   
   }
 
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     flex-wrap: wrap;
     gap:1em;
    top: 2em;
@@ -115,7 +115,7 @@ export const Heading = styled.h1`
     
   }
 
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     height: 1.5em;
   }
 `;
@@ -157,7 +157,7 @@ export const Instructions = styled.p`
     font-size: 0.75em;
   }
 
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     width: 65vw;
     font-size: 1em;
     

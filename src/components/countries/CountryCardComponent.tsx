@@ -1,5 +1,5 @@
 import React from "react";
-import { DetailsDiv, IconDiv, Label, ShipCard, Value } from "../../styles/ListPage/styles";
+import { DetailsDiv, IconDiv, Label, InfoCard, Value } from "../../styles/ListPage/styles";
 import {CountriesIcons} from "../../images/CountriesIcons"
 import { styles } from "../../styles/index";
 
@@ -10,16 +10,25 @@ interface Props {
   phone: string;
 }
 
-let WIDTH: string | number | undefined;
+let WIDTH;
 const WindowWidth = window.screen.width;
 
 
+if (WindowWidth > 1200) {
+  WIDTH = 31.5;
+}
 
-if (WindowWidth >= 768&&WindowWidth<=1024) {
+if (WindowWidth <= 1200) {
+  WIDTH = 25;
+}
+
+if (WindowWidth <= 1024) {
   WIDTH = 22;
-}else if (WindowWidth <= 428) {
+}
+
+if (WindowWidth <= 428) {
   WIDTH = 18;
-}else{WIDTH=30}
+}
 
 
 
@@ -29,7 +38,7 @@ const CountryCardComponent: React.FC<Props> = ({ name, capital, phone }) => {
   const countriesIcons=[CountriesIcons.globe(WIDTH, `${styles.color.blue.regular}`), CountriesIcons.location(WIDTH, `${styles.color.blue.regular}`), CountriesIcons.phone(WIDTH, `${styles.color.blue.regular}`)]
 
   return (
-    <ShipCard>
+    <InfoCard>
       <IconDiv>{countriesIcons.map((icon,index)=><div key={index}>{icon}</div>)}</IconDiv>
       <DetailsDiv>
         <Label>Country</Label>
@@ -39,7 +48,7 @@ const CountryCardComponent: React.FC<Props> = ({ name, capital, phone }) => {
         <Label>Phone</Label>
         <Value>{phone}</Value>
       </DetailsDiv>
-    </ShipCard>
+    </InfoCard>
   );
 };
 

@@ -6,7 +6,7 @@ export const FormPageWrapper = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
 
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     flex-direction: column;
   
   }
@@ -24,7 +24,7 @@ export const FormContainer = styled.div`
     width: 18em;
   }
 
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     width:100%;
     
    
@@ -45,7 +45,7 @@ export const CardComponentContainer = styled.div`
     height: 23em;
     justify-content: space-between;
   }
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     width:100%;
   }
 `;
@@ -57,7 +57,7 @@ export const Split = styled.span`
     height: 30em;
   }
 
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     width: 20em;
     height: 0;
     transform: rotate(90deg);
@@ -109,7 +109,7 @@ export const Card = styled.div`
     bottom:3em;
   }
 
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     width: 65vw;
     height: 18em;
   }
@@ -129,7 +129,7 @@ export const TextDiv = styled.div`
     /* height: 50%; */
   }
 
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     margin-bottom: 2em;
   }
 `;
@@ -182,7 +182,7 @@ export const Circle = styled.div`
     bottom: -2.5em; */
   }
 
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     width:5em;
     height: 5em;
     bottom: -2.65em;
@@ -213,7 +213,7 @@ export const Label = styled.div`
     font-size: 1em;
   }
 
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     font-size: 1.25em;
     
   }
@@ -245,7 +245,7 @@ export const Value = styled.div`
     margin-bottom: 1em;
   }
 
-  ${styles.screen.mobileLG}{
+  ${styles.screen.mobileLarge}{
     font-size: 1.25em;
     margin-left: 0;
    

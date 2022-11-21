@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import { RootState } from "./store";
 
-interface FormState {
+type FormState= {
   firstName: string;
   lastName: string;
   age: string;

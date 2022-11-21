@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { gql, useQuery } from "@apollo/client";
-import { Button, ButtonsDiv, ListDiv, ListMain } from "../../styles/ListPage/styles";
+import { ListDiv, ListMain } from "../../styles/ListPage/styles";
 import ShipCardComponent from "./ShipCardComponent";
-
+import Buttons from "../buttons/Buttons";
 
 const GET_SHIPS = gql`
   query ListShips($limit: Int!, $offset: Int!) {
@@ -14,34 +14,41 @@ const GET_SHIPS = gql`
   }
 `;
 
-let PAGE_SIZE: number;
+let PAGE_SIZE;
 
 const WindowWidth = window.screen.width;
 
 
-
-if(WindowWidth > 1024){
-  PAGE_SIZE = 8; 
+if (WindowWidth > 1200) {
+  PAGE_SIZE = 8;
 }
 
-if(WindowWidth <= 1024){
-  PAGE_SIZE = 6; 
+if (WindowWidth <= 1200) {
+  PAGE_SIZE = 9;
 }
 
-if(WindowWidth <= 428){
-  PAGE_SIZE = 8; 
+if (WindowWidth <= 1024) {
+  PAGE_SIZE = 6;
 }
 
+if (WindowWidth <= 428) {
+  PAGE_SIZE = 8;
+}
 
 const ShipsCardComponent: React.FC = () => {
-  const [page, setPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
+
 
   const { loading, data } = useQuery(GET_SHIPS, {
     variables: {
       limit: PAGE_SIZE,
-      offset: page * PAGE_SIZE,
+      offset: currentPage * PAGE_SIZE,
     },
   });
+
+
+
+  const buttonProps = { currPage: currentPage, setCurrPage: setCurrentPage, pageSize: PAGE_SIZE, loading, countries: false, data };
 
   return (
     <ListMain>
@@ -52,22 +59,7 @@ const ShipsCardComponent: React.FC = () => {
             <ShipCardComponent name={ship.name} type={ship.type} year={ship.year_built} key={index} />
           ))}
       </ListDiv>
-      <ButtonsDiv>
-        <Button
-          disabled={!loading && page < 1}
-          onClick={() => {
-            setPage((prev) => prev - 1);
-          }}>
-          Back
-        </Button>
-        <Button
-          disabled={!loading && data.ships.length < PAGE_SIZE}
-          onClick={() => {
-            setPage((prev) => prev + 1);
-          }}>
-          Load More
-        </Button>
-      </ButtonsDiv>
+      <Buttons {...buttonProps} />
     </ListMain>
   );
 };
