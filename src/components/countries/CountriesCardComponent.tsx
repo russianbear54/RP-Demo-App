@@ -1,7 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
 import {  useEffect, useState } from "react";
 import { ListDiv, ListMain } from "../../styles/ListPage/styles";
-import Buttons from "../buttons/Buttons";
+import ButtonsComponent from "../buttons/Buttons";
 import CountryCardComponent from "./CountryCardComponent";
 
 const GET_COUNTRIES = gql`
@@ -65,7 +65,7 @@ const CountriesCardComponent: React.FC = () => {
             <CountryCardComponent name={country.name} capital={country.capital} phone={country.phone} key={index} />
           ))}
       </ListDiv>
-      <Buttons {...buttonProps}  />
+      <ButtonsComponent {...buttonProps}  />
     </ListMain>
   );
 };

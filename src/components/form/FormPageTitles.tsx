@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import React from "react";
-import { formPageTitleNorm, formPageTitle768, formPageTitle1024,formPageTitleiPhoneProMax12 } from "../../styles/stylesMUI";
+import { formPageTitleNorm, formPageTitle768, formPageTitle1024,formPageTitleiPhoneProMax12, formPageTitle1200 } from "../../styles/stylesMUI";
 
 type Props = {
   title: string;
@@ -9,19 +9,17 @@ type Props = {
 
 const FormPageTitles: React.FC<Props> = ({ title }) => {
   const w428 = useMediaQuery("(max-width:428px)");
-
   const w768 = useMediaQuery("(max-width:768px)");
   const w1024 = useMediaQuery("(max-width:1024px)");
   const w1200 = useMediaQuery("(max-width:1200px)");
 
-  let SIZE;
+  let SIZE=formPageTitleNorm;
 
 
 
-  if (!w768 && !w1024 && !w428) {
-    SIZE = formPageTitleNorm;
+  if (w1200) {
+    SIZE = formPageTitle1200;
   }
-
   
   if (w1024) {
     SIZE = formPageTitle1024;

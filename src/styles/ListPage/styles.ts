@@ -114,11 +114,11 @@ export const Value = styled.div`
   color: ${styles.color.blue.regular};
 
   ${styles.screen.smallScreen} {
-    font-size: 0.75em;
+    font-size: 1em;
   }
 
   ${styles.screen.iPadMini} {
-    font-size: 1em;
+    font-size: .75em;
   }
   ${styles.screen.mobileLarge}{
     font-size: .75em;

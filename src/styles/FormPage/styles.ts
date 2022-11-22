@@ -6,47 +6,34 @@ export const FormPageWrapper = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
 
-  ${styles.screen.mobileLarge}{
+  ${styles.screen.mobileLarge} {
     flex-direction: column;
-  
+    height: 100vh;
+    /* justify-content: space-between; */
   }
 `;
 
-
-export const FormContainer = styled.div`
+export const FPContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 30em;
 
+  ${styles.screen.smallScreen} {
+    width: 25em;
+    justify-content: space-between;
+    height: 27em;
+  }
 
   ${styles.screen.iPadMini} {
     width: 18em;
-  }
-
-  ${styles.screen.mobileLarge}{
-    width:100%;
-    
-   
-  }
-  
-
-`;
-
-export const CardComponentContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 30em;
- 
-
-  ${styles.screen.iPadMini} {
-    width: 18em;
-    height: 23em;
+    height: 27em;
     justify-content: space-between;
   }
-  ${styles.screen.mobileLarge}{
-    width:100%;
+  ${styles.screen.mobileLarge} {
+    margin: auto;
+
+    
   }
 `;
 
@@ -57,7 +44,7 @@ export const Split = styled.span`
     height: 30em;
   }
 
-  ${styles.screen.mobileLarge}{
+  ${styles.screen.mobileLarge} {
     width: 20em;
     height: 0;
     transform: rotate(90deg);
@@ -70,78 +57,45 @@ export const FormPageDiv = styled.div`
   justify-content: center;
 `;
 
-// export const CardDiv=styled.div`
-// border: ${styles.border.test};
+export const CardDiv = styled.div`
+  ${styles.screen.smallScreen} {
+    margin-bottom: 2em;
+  }
 
-// ${styles.screen.iPadMini}{
-//   bottom:5em;
-// }
-// `
+  ${styles.screen.iPadMini} {
+    margin-bottom: 2em;
+  }
+
+  ${styles.screen.mobileLarge}{}
+`;
 
 export const Card = styled.div`
   display: flex;
   flex-direction: column;
   width: 24.25em;
   height: 23.25em;
-  border: 3.48px solid #0038fe;
+  border: ${styles.border.blue};
   border-radius: 26.08px;
   background-color: ${styles.color.gray};
 
   ${styles.screen.largeScreen} {
-    /* width: calc((1200 / 1920) * 24.25em);
-    height: calc((1200 / 1920) * 23.25em); */
     width: 21.25em;
-  height: 20.25em;
+    height: 20.25em;
   }
 
   ${styles.screen.smallScreen} {
-    /* width: calc((1024 / 1920) * 24.25em);
-    height: calc((1024 / 1920) * 23.25em); */
     width: 16em;
     height: 15.25em;
   }
 
   ${styles.screen.iPadMini} {
-    /* width: calc((768 / 1920) * 24.25em); */
-
-    width: 12em;
-    height: 11.75em;
-    bottom:3em;
+    width: 14em;
+    height: 14em;
   }
 
-  ${styles.screen.mobileLarge}{
+  ${styles.screen.mobileLarge} {
     width: 65vw;
     height: 18em;
-  }
-`;
-
-export const TextDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  margin-left: 2.5em;
-  margin-top: 5.5em;
-  height: 100%;
-
-  ${styles.screen.largeScreen} {
-    margin-left: calc((1200 / 1920) * 2.5em);
-    margin-top: calc((1200 / 1920) * 5.5em);
-    /* height: 50%; */
-  }
-
-  ${styles.screen.mobileLarge}{
-    margin-bottom: 2em;
-  }
-`;
-
-export const Pair = styled.div`
-  height: 4em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  ${styles.screen.largeScreen} {
-    height: 2em;
   }
 `;
 
@@ -165,27 +119,69 @@ export const Circle = styled.div`
   }
 
   ${styles.screen.smallScreen} {
-    width: calc((1024 / 1920) * 8em);
+    /* width: calc((1024 / 1920) * 8em);
     height: calc((1024 / 1920) * 8em);
-    bottom: calc((1024 / 1920) * -4.25em);
-    /* width: 5.25em;
+    bottom: calc((1024 / 1920) * -4.25em); */
+    width: 5.25em;
     height: 5.25em;
-    bottom: -2.75em; */
+    bottom: -2.75em;
   }
 
   ${styles.screen.iPadMini} {
-    width: calc((768 / 1920) * 8em);
-    height: calc((768 / 1920) * 8em);
-    bottom: calc((768 / 1920) * -4.25em);
+    width: calc((768 / 1920) * 14em);
+    height: calc((768 / 1920) * 14em);
+    bottom: calc((768 / 1920) * -7.25em);
     /* width: 4.5em;
     height: 4.5em;
     bottom: -2.5em; */
   }
 
-  ${styles.screen.mobileLarge}{
-    width:5em;
+  ${styles.screen.mobileLarge} {
+    width: 5em;
     height: 5em;
     bottom: -2.65em;
+  }
+`;
+
+export const Pair = styled.div`
+  height: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  ${styles.screen.largeScreen} {
+    height: 2em;
+  }
+
+  ${styles.screen.iPadMini} {
+    height: 3em;
+  }
+`;
+
+export const TextDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 2.5em;
+  margin-top: 5.5em;
+  height: 100%;
+
+  ${styles.screen.largeScreen} {
+    margin-left: calc((1200 / 1920) * 2.5em);
+    margin-top: calc((1200 / 1920) * 5.5em);
+    /* height: 50%; */
+  }
+
+  ${styles.screen.smallScreen} {
+    margin-top: 2em;
+  }
+
+  ${styles.screen.iPadMini} {
+    margin-top: 2em;
+  }
+
+  ${styles.screen.mobileLarge} {
+    margin-bottom: 2em;
   }
 `;
 
@@ -200,12 +196,11 @@ export const Label = styled.div`
   opacity: 0.5;
 
   ${styles.screen.largeScreen} {
-    font-size: calc((1200 / 1920) * 1.25em);
+    /* font-size: calc((1200 / 1920) * 1.25em); */
   }
 
   ${styles.screen.smallScreen} {
-    font-size: calc((1024 / 1920) * 1.25em);
-    /* font-size: 1.25em; */
+    font-size: 1.25em;
   }
 
   ${styles.screen.iPadMini} {
@@ -213,9 +208,8 @@ export const Label = styled.div`
     font-size: 1em;
   }
 
-  ${styles.screen.mobileLarge}{
+  ${styles.screen.mobileLarge} {
     font-size: 1.25em;
-    
   }
 `;
 
@@ -227,28 +221,21 @@ export const Value = styled.div`
   font-size: 1.812em;
   letter-spacing: 0.187208px;
   color: ${styles.color.blue.regular};
-  /* color: #0038FE; */
 
-  ${styles.screen.extraLargeScreen} {
-    font-size: calc((1200 / 1920) * 1.25em);
+  ${styles.screen.largeScreen} {
+    /* font-size: calc((1200 / 1920) * 1.25em); */
   }
 
   ${styles.screen.smallScreen} {
-    font-size: calc((1024 / 1920) * 1.25em);
-    /* font-size: 1.25em; */
-    margin-left: 2em;
+    /* font-size: calc((1024 / 1920) * 1.25em); */
+    font-size: 1.25em;
   }
 
   ${styles.screen.iPadMini} {
-    font-size: calc((768 / 1920) * 1.25em);
-    /* font-size: 1em; */
-    margin-bottom: 1em;
+    font-size: 1em;
   }
 
-  ${styles.screen.mobileLarge}{
+  ${styles.screen.mobileLarge} {
     font-size: 1.25em;
-    margin-left: 0;
-   
-    
   }
 `;

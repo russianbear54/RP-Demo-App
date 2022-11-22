@@ -11,7 +11,7 @@ interface Props {
   data?: any;
 }
 
-const ButtonsComponent = ({ currPage, setCurrPage, pageSize, currCountries, loading, countries, data }: Props) => {
+const ButtonsComponent:React.FC<Props>= ({ currPage, setCurrPage, pageSize, currCountries, loading, countries, data }) => {
   return (
     <ButtonsDiv>
       <Button

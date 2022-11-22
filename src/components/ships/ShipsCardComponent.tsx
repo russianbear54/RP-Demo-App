@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { gql, useQuery } from "@apollo/client";
 import { ListDiv, ListMain } from "../../styles/ListPage/styles";
 import ShipCardComponent from "./ShipCardComponent";
-import Buttons from "../buttons/Buttons";
+import ButtonsComponent from "../buttons/Buttons";
 
 const GET_SHIPS = gql`
   query ListShips($limit: Int!, $offset: Int!) {
@@ -59,7 +59,7 @@ const ShipsCardComponent: React.FC = () => {
             <ShipCardComponent name={ship.name} type={ship.type} year={ship.year_built} key={index} />
           ))}
       </ListDiv>
-      <Buttons {...buttonProps} />
+      <ButtonsComponent {...buttonProps} />
     </ListMain>
   );
 };

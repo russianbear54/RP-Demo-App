@@ -1,16 +1,16 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectForm } from "../../state/formSlice";
-import { Circle, Card, Label, Value, CardComponentContainer, TextDiv, Pair,  } from "../../styles/FormPage/styles";
+import { Circle, Card, Label, Value,  TextDiv, Pair, FPContainer, CardDiv,  } from "../../styles/FormPage/styles";
 import FormPageTitles from "./FormPageTitles";
 
 const CardComponent: React.FC = () => {
   const value = useSelector(selectForm);
 
   return (
-    <CardComponentContainer>
+    <FPContainer>
       <FormPageTitles title={"Show Card"} />
-      <div>
+      <CardDiv>
         <Circle />
         <Card>
           <TextDiv>
@@ -30,8 +30,8 @@ const CardComponent: React.FC = () => {
             </Pair>
           </TextDiv>
         </Card>
-      </div>
-    </CardComponentContainer>
+      </CardDiv>
+    </FPContainer>
   );
 };
 
