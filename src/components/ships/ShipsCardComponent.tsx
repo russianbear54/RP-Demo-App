@@ -3,6 +3,7 @@ import { gql, useQuery } from "@apollo/client";
 import { ListDiv, ListMain } from "../../styles/ListPage/styles";
 import ShipCardComponent from "./ShipCardComponent";
 import ButtonsComponent from "../buttons/Buttons";
+import CARDcomponent from "../generics/CARDcomponent";
 
 const GET_SHIPS = gql`
   query ListShips($limit: Int!, $offset: Int!) {

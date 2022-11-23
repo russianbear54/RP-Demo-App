@@ -7,6 +7,9 @@ import FormPageTitles from "./FormPageTitles";
 const CardComponent: React.FC = () => {
   const value = useSelector(selectForm);
 
+
+
+
   return (
     <FPContainer>
       <FormPageTitles title={"Show Card"} />

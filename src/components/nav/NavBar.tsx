@@ -7,8 +7,6 @@ import { HamburgerButton, HamburgerNav, HamburgerNavbarLink, HamburgerNavigation
 
 const NavBar: React.FC = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
-  console.log('I rendered!');
-
 
 
   return (
@@ -53,4 +51,3 @@ const NavBar: React.FC = () => {
 export default NavBar;
 
 
-// to={`${"/home"}`||`${"/"}`}

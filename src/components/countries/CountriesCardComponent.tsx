@@ -2,6 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 import {  useEffect, useState } from "react";
 import { ListDiv, ListMain } from "../../styles/ListPage/styles";
 import ButtonsComponent from "../buttons/Buttons";
+import CARDcomponent from "../generics/CARDcomponent";
 import CountryCardComponent from "./CountryCardComponent";
 
 const GET_COUNTRIES = gql`
