@@ -1,6 +1,7 @@
 import { InfoCard, Label, Value, IconDiv, DetailsDiv } from "../../styles/ListPage/styles";
 import { ShipsIcons } from "../../images/ShipsIcons";
 import { styles } from "../../styles/index";
+import { useEffect, useState } from "react";
 
 interface Props {
   name: string;
@@ -8,33 +9,34 @@ interface Props {
   year: number;
 }
 
-let WIDTH;
-
-const WindowWidth = window.screen.width;
-
-if (WindowWidth > 1200) {
-  WIDTH = 31.5;
-}
-
-if (WindowWidth <= 1200) {
-  WIDTH = 25;
-}
-
-if (WindowWidth <= 1024) {
-  WIDTH = 22;
-}
-
-if (WindowWidth <= 428) {
-  WIDTH = 18;
-}
-
-
-
 const ShipCardComponent: React.FC<Props> = ({ name, type, year }) => {
+  const [width, setWidth] = useState(null);
+  let iconWidth;
+
+  useEffect(() => {
+    setWidth(window.screen.width);
+  }, []);
+
+  if (width > 1200) {
+    iconWidth = 31.5;
+  }
+
+  if (width <= 1200) {
+    iconWidth = 25;
+  }
+
+  if (width <= 1024) {
+    iconWidth = 22;
+  }
+
+  if (width <= 428) {
+    iconWidth = 18;
+  }
+
   const shipIcons = [
-    ShipsIcons.anchor(WIDTH, `${styles.color.blue.regular}`),
-    ShipsIcons.type(WIDTH, `${styles.color.blue.regular}`),
-    ShipsIcons.year(WIDTH, `${styles.color.blue.regular}`),
+    ShipsIcons.anchor(iconWidth, `${styles.color.blue.regular}`),
+    ShipsIcons.type(iconWidth, `${styles.color.blue.regular}`),
+    ShipsIcons.year(iconWidth, `${styles.color.blue.regular}`),
   ];
 
   return (
