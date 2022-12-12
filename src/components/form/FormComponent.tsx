@@ -2,10 +2,10 @@ import React from "react";
 import FormPageTitles from "./FormPageTitles";
 import TextField from "@mui/material/TextField";
 import { Form, Formik } from "formik";
-import { Container, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { Button, Container, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import * as styles from "../../styles/stylesMUI";
 import { useDispatch } from "react-redux";
-import { enterFields } from "../../state/formSlice";
+import { enterFields } from "../../store/slices/formSlice";
 import { FPContainer } from "../../styles/FormPage/styles";
 
 const FormComponent: React.FC = () => {
@@ -15,9 +15,10 @@ const FormComponent: React.FC = () => {
     <FPContainer>
       <FormPageTitles title={"Form Fields"} />
       <Formik
-        initialValues={{ firstName: "", lastName: "", age: "", department: "" }}
-        onSubmit={(values) => {
+        initialValues={{ firstName: "", lastName: "", age: undefined, department: "" }}
+        onSubmit={(values,{resetForm}) => {
           dispatch(enterFields(values));
+          resetForm({ })         
         }}>
         {(props) => (
           <Form>
@@ -78,7 +79,7 @@ const FormComponent: React.FC = () => {
                   </MenuItem>
                 </Select>
               </FormControl>
-              <button type="submit">Submit</button>
+              <Button type="submit" variant="contained">Submit</Button>
             </Container>
           </Form>
         )}

@@ -18,6 +18,8 @@ export const FPContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 30em;
+  justify-content: space-between;
+
 
   ${styles.screen.smallScreen} {
     width: 25em;
@@ -239,3 +241,4 @@ export const Value = styled.div`
     font-size: 1.25em;
   }
 `;
+

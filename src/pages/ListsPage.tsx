@@ -1,15 +1,15 @@
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client";
+
 import ShipsCardComponent from "../components/ships/ShipsCardComponent";
+import { useAPI } from "../hooks/use-api";
 import { Wrapper } from "../styles/HomePage/styles";
 import { Title } from "../styles/stylesSC";
 
-
-const client = new ApolloClient({
-  uri: "https://api.spacex.land/graphql/",
-  cache: new InMemoryCache(),
-});
-
 const ListsPage: React.FC = () => {
+
+  const client = useAPI('ships');
+
+
   return (
     <Wrapper>
       <Title>Ships List</Title>

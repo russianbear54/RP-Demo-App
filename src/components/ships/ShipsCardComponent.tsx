@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { gql, useQuery } from "@apollo/client";
 import { ListDiv, ListMain } from "../../styles/ListPage/styles";
 import ShipCardComponent from "./ShipCardComponent";
 import ButtonsComponent from "../buttons/Buttons";
 import CARDcomponent from "../generics/CARDcomponent";
+import { useWidth } from "../../hooks/use-width";
 
 const GET_SHIPS = gql`
   query ListShips($limit: Int!, $offset: Int!) {
@@ -15,30 +16,10 @@ const GET_SHIPS = gql`
   }
 `;
 
-let PAGE_SIZE;
-
-const WindowWidth = window.screen.width;
-
-
-if (WindowWidth > 1200) {
-  PAGE_SIZE = 8;
-}
-
-if (WindowWidth <= 1200) {
-  PAGE_SIZE = 9;
-}
-
-if (WindowWidth <= 1024) {
-  PAGE_SIZE = 6;
-}
-
-if (WindowWidth <= 428) {
-  PAGE_SIZE = 8;
-}
-
 const ShipsCardComponent: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(0);
-
+  const [width, setWidth] = useState(null);
+  const { PAGE_SIZE } = useWidth(width);
 
   const { loading, data } = useQuery(GET_SHIPS, {
     variables: {
@@ -47,7 +28,9 @@ const ShipsCardComponent: React.FC = () => {
     },
   });
 
-
+  useEffect(() => {
+    setWidth(window.screen.width);
+  }, []);
 
   const buttonProps = { currPage: currentPage, setCurrPage: setCurrentPage, pageSize: PAGE_SIZE, loading, countries: false, data };
 

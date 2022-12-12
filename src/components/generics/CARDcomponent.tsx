@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DetailsDiv, IconDiv, InfoCard, Label, Value } from "../../styles/ListPage/styles";
 import { CountriesIcons } from "../../images/CountriesIcons";
 import { ShipsIcons } from "../../images/ShipsIcons";
 import { styles } from "../../styles";
+import { useWidth } from "../../hooks/use-width";
 
 interface Props {
   name?: string;
@@ -13,27 +14,17 @@ interface Props {
   year?: number;
 }
 
-let WIDTH;
-const WindowWidth = window.screen.width;
-
-if (WindowWidth > 1200) {
-  WIDTH = 31.5;
-}
-
-if (WindowWidth <= 1200) {
-  WIDTH = 25;
-}
-
-if (WindowWidth <= 1024) {
-  WIDTH = 22;
-}
-
-if (WindowWidth <= 428) {
-  WIDTH = 18;
-}
 
 const CARDcomponent: React.FC<Props> = ({ name, capital, phone, shipName, type, year }) => {
   const [mode, setMode] = useState(null);
+  const [width, setWidth] = useState(null);
+
+  const { PAGE_SIZE,iconWidth } = useWidth(width);
+
+
+  useEffect(() => {
+    setWidth(window.screen.width);
+  }, []);
 
   if (shipName && type && year) {
     setMode("ships");
@@ -42,15 +33,15 @@ const CARDcomponent: React.FC<Props> = ({ name, capital, phone, shipName, type, 
   }
 
   const countriesIcons = [
-    CountriesIcons.globe(WIDTH, `${styles.color.blue.regular}`),
-    CountriesIcons.location(WIDTH, `${styles.color.blue.regular}`),
-    CountriesIcons.phone(WIDTH, `${styles.color.blue.regular}`),
+    CountriesIcons.globe(iconWidth, `${styles.color.blue.regular}`),
+    CountriesIcons.location(iconWidth, `${styles.color.blue.regular}`),
+    CountriesIcons.phone(iconWidth, `${styles.color.blue.regular}`),
   ];
 
   const shipIcons = [
-    ShipsIcons.anchor(WIDTH, `${styles.color.blue.regular}`),
-    ShipsIcons.type(WIDTH, `${styles.color.blue.regular}`),
-    ShipsIcons.year(WIDTH, `${styles.color.blue.regular}`),
+    ShipsIcons.anchor(iconWidth, `${styles.color.blue.regular}`),
+    ShipsIcons.type(iconWidth, `${styles.color.blue.regular}`),
+    ShipsIcons.year(iconWidth, `${styles.color.blue.regular}`),
   ];
 
   return (

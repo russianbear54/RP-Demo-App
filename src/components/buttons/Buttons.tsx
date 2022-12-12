@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, ButtonsDiv } from "../../styles/ListPage/styles";
+import {  ButtonsDiv } from "../../styles/ListPage/styles";
+import {Button } from "@mui/material";
 
 interface Props {
   currPage: number;
@@ -14,14 +15,14 @@ interface Props {
 const ButtonsComponent:React.FC<Props>= ({ currPage, setCurrPage, pageSize, currCountries, loading, countries, data }) => {
   return (
     <ButtonsDiv>
-      <Button
+      <Button variant="contained" size="large"
         disabled={countries ? currPage === 1 : !loading && currPage < 1}
         onClick={() => {
           setCurrPage((prev) => prev - 1);
         }}>
         Back
       </Button>
-      <Button
+      <Button variant="contained" size="large"
         disabled={countries ? currCountries.length < pageSize : !loading && data.ships.length < pageSize}
         onClick={() => {
           setCurrPage((prev) => prev + 1);

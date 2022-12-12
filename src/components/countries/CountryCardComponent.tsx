@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { DetailsDiv, IconDiv, Label, InfoCard, Value } from "../../styles/ListPage/styles";
 import { CountriesIcons } from "../../images/CountriesIcons";
 import { styles } from "../../styles/index";
+import { useWidth } from "../../hooks/use-width";
 
 interface Props {
   name: string;
@@ -11,27 +12,11 @@ interface Props {
 
 const CountryCardComponent: React.FC<Props> = ({ name, capital, phone }) => {
   const [width, setWidth] = useState(null);
-  let iconWidth;
+  const { iconWidth } = useWidth(width);
 
   useEffect(() => {
     setWidth(window.screen.width);
   }, []);
-
-  if (width > 1200) {
-    iconWidth = 31.5;
-  }
-
-  if (width <= 1200) {
-    iconWidth = 25;
-  }
-
-  if (width <= 1024) {
-    iconWidth = 22;
-  }
-
-  if (width <= 428) {
-    iconWidth = 18;
-  }
 
   const countriesIcons = [
     CountriesIcons.globe(iconWidth, `${styles.color.blue.regular}`),

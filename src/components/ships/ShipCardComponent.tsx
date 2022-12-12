@@ -2,6 +2,8 @@ import { InfoCard, Label, Value, IconDiv, DetailsDiv } from "../../styles/ListPa
 import { ShipsIcons } from "../../images/ShipsIcons";
 import { styles } from "../../styles/index";
 import { useEffect, useState } from "react";
+import {useWidth} from '../../hooks/use-width'
+
 
 interface Props {
   name: string;
@@ -9,29 +11,18 @@ interface Props {
   year: number;
 }
 
+
+
 const ShipCardComponent: React.FC<Props> = ({ name, type, year }) => {
   const [width, setWidth] = useState(null);
-  let iconWidth;
+  const {iconWidth}=useWidth(width)
+
+console.log('iconWidth',iconWidth)
 
   useEffect(() => {
     setWidth(window.screen.width);
   }, []);
 
-  if (width > 1200) {
-    iconWidth = 31.5;
-  }
-
-  if (width <= 1200) {
-    iconWidth = 25;
-  }
-
-  if (width <= 1024) {
-    iconWidth = 22;
-  }
-
-  if (width <= 428) {
-    iconWidth = 18;
-  }
 
   const shipIcons = [
     ShipsIcons.anchor(iconWidth, `${styles.color.blue.regular}`),

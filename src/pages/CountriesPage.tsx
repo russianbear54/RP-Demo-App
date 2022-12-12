@@ -1,22 +1,36 @@
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import {  ApolloProvider } from "@apollo/client";
 import React from "react";
 import CountriesCardComponent from "../components/countries/CountriesCardComponent";
 import { Wrapper } from "../styles/HomePage/styles";
 import { Title } from "../styles/stylesSC";
+import { AnimatePresence, motion } from "framer-motion";
+import { useAPI } from "../hooks/use-api";
 
-const client = new ApolloClient({
-  uri: "https://countries.trevorblades.com/",
-  cache: new InMemoryCache(),
-});
+const dropIn = {
+  hidden: { y: "-100vh", opacity: 0 },
+  visible: { y: "0", opacity: 1, transition: { duration: .1, type: "spring", damping: 25, stiffness: 200 } },
+  exit: { y: "100vh", opacity: 0 },
+};
+
+
+
 
 const CountriesPage: React.FC = () => {
+ 
+  const client = useAPI('countries');
+
   return (
-    <Wrapper>
-      <Title>Countries List</Title>
-      <ApolloProvider client={client}>
-        <CountriesCardComponent />
-      </ApolloProvider>
-    </Wrapper>
+    <AnimatePresence mode="sync" >
+    
+      <motion.div variants={dropIn} initial="hidden" animate="visible" exit="exit">
+        <Wrapper>
+          <Title>Countries List</Title>
+          <ApolloProvider client={client}>
+            <CountriesCardComponent />
+          </ApolloProvider>
+        </Wrapper>
+      </motion.div>
+    </AnimatePresence>
   );
 };
 
