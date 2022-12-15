@@ -5,7 +5,7 @@ import { Wrapper, Par, Trio } from "../styles/HomePage/styles";
 import { Title } from "../styles/stylesSC";
 import { instructions } from "../Dummies/homePageInstructions";
 
-function HomePage() {
+const HomePage:React.FC=()=> {
   return (
     <Wrapper>
       <Title>Home Page</Title>

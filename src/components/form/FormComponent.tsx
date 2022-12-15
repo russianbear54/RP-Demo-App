@@ -5,7 +5,8 @@ import { Form, Formik } from "formik";
 import { Button, Container, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import * as styles from "../../styles/stylesMUI";
 import { useDispatch } from "react-redux";
-import { enterFields } from "../../store/slices/formSlice";
+import { enterFields } from "../../store/slices/formsSlice";
+
 import { FPContainer } from "../../styles/FormPage/styles";
 
 const FormComponent: React.FC = () => {
@@ -16,9 +17,9 @@ const FormComponent: React.FC = () => {
       <FormPageTitles title={"Form Fields"} />
       <Formik
         initialValues={{ firstName: "", lastName: "", age: undefined, department: "" }}
-        onSubmit={(values,{resetForm}) => {
+        onSubmit={(values, { resetForm }) => {
           dispatch(enterFields(values));
-          resetForm({ })         
+          resetForm({});
         }}>
         {(props) => (
           <Form>
@@ -79,7 +80,9 @@ const FormComponent: React.FC = () => {
                   </MenuItem>
                 </Select>
               </FormControl>
-              <Button type="submit" variant="contained">Submit</Button>
+              <Button type="submit" variant="contained">
+                Submit
+              </Button>
             </Container>
           </Form>
         )}
