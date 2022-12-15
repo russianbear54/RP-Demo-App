@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Backdrop from "./Backdrop";
-import ApplicantsTable from "../form/ApplicantsTable";
+import ApplicantsTable from "../table/ApplicantsTable";
 import {ModaL} from '../../styles/Modal/styles'
 
 
@@ -19,8 +19,7 @@ const Modal:React.FC<Props>  = ( {handleClose} ) => {
   return (
     <Backdrop onClick={handleClose}>
       <ModaL as={motion.div}
-        onClick={(e) => e.stopPropagation()}
-        
+        onClick={(e) => e.stopPropagation()}        
         variants={dropIn}
         initial="hidden"
         animate="visible"
