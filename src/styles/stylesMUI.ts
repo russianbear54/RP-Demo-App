@@ -1,4 +1,4 @@
-// import {styles} from './index'
+//  import {styles} from './index'
 
 export const formStyle = {
   position: "relative",
@@ -8,11 +8,6 @@ export const formStyle = {
 
   width: { xs: 300, sm: 300, md: 350, lg: 400, xl: 600 },
   height: { xs: 350, sm: 300, md: 300, lg: 400, xl: 500 },
-};
-
-export const textFieldStyle = {
-  height: { xs: 10, sm: 20, md: null, lg: null, xl: null }
-
 };
 
 export const formPageTitleNorm = {
@@ -44,5 +39,3 @@ export const formPageTitleiPhoneProMax12 = {
   fontWeight: 400,
   fontSize: "2em",
 };
-
-

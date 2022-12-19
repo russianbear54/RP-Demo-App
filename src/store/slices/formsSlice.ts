@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import {dummyState} from '../../helpers/dummyState'
+import { dummyState } from "../../helpers/dummyState";
 
 import { RootState } from "../store";
 
@@ -10,15 +10,9 @@ interface FormInputs {
   department: string;
 }
 
-
-
-console.log("dummyState", dummyState);
-
-
-
 export const formsSlice = createSlice({
   name: "forms",
-  initialState: dummyState as unknown as FormInputs[],
+  initialState: dummyState as FormInputs[],
   reducers: {
     enterFields: (state, action: PayloadAction<FormInputs>) => {
       state.push(action.payload);
@@ -26,8 +20,7 @@ export const formsSlice = createSlice({
   },
 });
 
-export const selectForm = (state: RootState) => state;
-export const selectForms = (state: RootState) => state.formsReducer;
+export const selectForms = (state: RootState) => state.forms;
 
 export const formsReducer = formsSlice.reducer;
 

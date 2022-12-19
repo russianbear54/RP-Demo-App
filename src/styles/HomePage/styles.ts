@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  counter-reset: instr;
+
 
 `;
 
@@ -37,10 +37,11 @@ export const Par = styled.p`
   }
 `;
 
-export const Trio = styled.div`
+export const Trio = styled.ol`
   position: relative;
   display: flex;
   justify-content: space-between;
+  counter-reset: instr;
 
   ${styles.screen.iPadMini} {
     width: 70vw;
@@ -85,6 +86,7 @@ export const InstructionsWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
+  
 `;
 
 export const Heading = styled.h1`
@@ -96,6 +98,7 @@ export const Heading = styled.h1`
   align-items: center;
   letter-spacing: 0.461865px;
   color: ${styles.color.blue.instruction};
+  
 
   ::before {
     counter-increment: instr;

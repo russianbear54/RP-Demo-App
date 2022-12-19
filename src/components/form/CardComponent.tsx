@@ -1,25 +1,21 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { useSelector } from "react-redux";
 import { selectForms } from "../../store/slices/formsSlice";
 import { Circle, Card, Label, Value, TextDiv, Pair, FPContainer, CardDiv } from "../../styles/FormPage/styles";
 import { Button } from "@mui/material";
-
 import Modal from "../modal/Modal";
-
 import FormPageTitles from "./FormPageTitles";
+import { selectForM } from "../../store/slices/formSlice";
+import { useAppSelector } from "../../store/hooks";
 
 const CardComponent: React.FC = () => {
-  const value = useSelector(selectForms);
+  const values = useAppSelector(selectForms);
+  const value = useAppSelector(selectForM);
 
   const [modalOpen, setModalOpen] = useState(false);
 
-  console.log("value33", value);
-
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
-
-  const properValue = value[value.length - 1];
 
   return (
     <FPContainer>
@@ -31,21 +27,21 @@ const CardComponent: React.FC = () => {
             <Pair>
               <Label>Name</Label>
               <Value>
-                {properValue.firstName} {properValue.lastName}
+                {value.firstName} {value.lastName}
               </Value>
             </Pair>
             <Pair>
               <Label>Age</Label>
-              <Value>{properValue.age}</Value>
+              <Value>{value.age}</Value>
             </Pair>
             <Pair>
               <Label>Department</Label>
-              <Value>{properValue.department}</Value>
+              <Value>{value.department}</Value>
             </Pair>
           </TextDiv>
         </Card>
       </CardDiv>
-      {value.length > 1 && (
+      {values.length > 1 && (
         <div>
           <Button
             variant="contained"

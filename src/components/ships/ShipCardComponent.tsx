@@ -2,8 +2,7 @@ import { InfoCard, Label, Value, IconDiv, DetailsDiv } from "../../styles/ListPa
 import { ShipsIcons } from "../../images/ShipsIcons";
 import { styles } from "../../styles/index";
 import { useEffect, useState } from "react";
-import {useWidth} from '../../hooks/use-width'
-
+import { useWidth } from "../../hooks/use-width";
 
 interface Props {
   name: string;
@@ -11,18 +10,13 @@ interface Props {
   year: number;
 }
 
-
-
 const ShipCardComponent: React.FC<Props> = ({ name, type, year }) => {
   const [width, setWidth] = useState(null);
-  const {iconWidth}=useWidth(width)
-
-console.log('iconWidth',iconWidth)
+  const { iconWidth } = useWidth(width);
 
   useEffect(() => {
     setWidth(window.screen.width);
   }, []);
-
 
   const shipIcons = [
     ShipsIcons.anchor(iconWidth, `${styles.color.blue.regular}`),

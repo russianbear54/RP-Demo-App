@@ -6,7 +6,7 @@ export const ModaL = styled.div`
   height: min-content;
   /* height: min(50%, 300px); */
   margin: auto;
-  padding: 0 2rem;
+  padding: 2rem;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
