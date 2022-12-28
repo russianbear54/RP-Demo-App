@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { dummyState } from "../../helpers/dummyState";
-
 import { RootState } from "../store";
 
 interface FormInputs {

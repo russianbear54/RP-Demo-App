@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "./components/nav/NavBar";
+import NavBar from "./components/Nav";
 import HomePage from "./pages/HomePage";
 import FormPage from "./pages/FormPage";
 import ListsPage from "./pages/ListsPage";

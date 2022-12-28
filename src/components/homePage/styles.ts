@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { styles } from "../index";
+import { styles } from "../../styles/index";
 
 export const Wrapper = styled.div`
   margin: auto;

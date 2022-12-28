@@ -1,7 +1,7 @@
 import { ApolloProvider } from "@apollo/client";
 import React from "react";
 import CountriesCardComponent from "../components/countries/CountriesCardComponent";
-import { Wrapper } from "../styles/HomePage/styles";
+import { Wrapper } from "../components/homePage/styles";
 import { Title } from "../styles/stylesSC";
 import { AnimatePresence, motion } from "framer-motion";
 import { useAPI } from "../hooks/use-api";

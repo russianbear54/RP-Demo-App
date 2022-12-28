@@ -12,95 +12,82 @@ type Applicant = {
 
 const columnHelper = createColumnHelper<Applicant>();
 
-
-
-const ApplicantsTable:React.FC=()=> {
-const [sorting,setSorting]=useState([])
+const ApplicantsTable: React.FC = () => {
+  const [sorting, setSorting] = useState([]);
   const data = useSelector(selectForms);
 
-  const columns = useMemo(()=>[
-    columnHelper.accessor("firstName", {
-      cell: (info) => info.getValue(),
-      header: () => <span>First Name</span>,
-    }),
-    columnHelper.accessor("lastName", {
-      cell: (info) => <i>{info.getValue()}</i>,
-      header: () => <span>Last Name</span>,
-    }),
-    columnHelper.accessor("age", {
-      header: () => "Age",
-      cell: (info) => info.getValue(),
-    }),
-    columnHelper.accessor("department", {
-      header: () => <span>Department</span>,
-      cell: (info) => info.renderValue(),
-      // footer: info => info.column.id
-    }),
-  ],[]);
+  const columns = useMemo(
+    () => [
+      columnHelper.accessor("firstName", {
+        cell: (info) => info.getValue(),
+        header: () => <span>First Name</span>,
+      }),
+      columnHelper.accessor("lastName", {
+        cell: (info) => <i>{info.getValue()}</i>,
+        header: () => <span>Last Name</span>,
+      }),
+      columnHelper.accessor("age", {
+        header: () => "Age",
+        cell: (info) => info.getValue(),
+      }),
+      columnHelper.accessor("department", {
+        header: () => <span>Department</span>,
+        cell: (info) => info.renderValue(),
+        // footer: info => info.column.id
+      }),
+    ],
+    []
+  );
 
   const table = useReactTable({
     data,
-    columns,state:{sorting},onSortingChange: setSorting,getSortedRowModel: getSortedRowModel(),
+    columns,
+    state: { sorting },
+    onSortingChange: setSorting,
+    getSortedRowModel: getSortedRowModel(),
     getCoreRowModel: getCoreRowModel(),
-  },);
-
-
+  });
 
   return (
-    <div >
-      <table style={{color:'white'}} >
- 
-         <thead>
-          {table.getHeaderGroups().map(headerGroup => (
+    <div>
+      <table style={{ color: "white" }}>
+        <thead>
+          {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
-              {headerGroup.headers.map(header => {
+              {headerGroup.headers.map((header) => {
                 return (
                   <th key={header.id} colSpan={header.colSpan}>
                     {header.isPlaceholder ? null : (
                       <div
                         {...{
-                          className: header.column.getCanSort()
-                            ? 'cursor-pointer select-none'
-                            : '',
+                          className: header.column.getCanSort() ? "cursor-pointer select-none" : "",
                           onClick: header.column.getToggleSortingHandler(),
-                        }}
-                      >
-                        {flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
+                        }}>
+                        {flexRender(header.column.columnDef.header, header.getContext())}
                         {{
-                          asc: ' 🔼',
-                          desc: ' 🔽',
+                          asc: " 🔼",
+                          desc: " 🔽",
                         }[header.column.getIsSorted() as string] ?? null}
                       </div>
                     )}
                   </th>
-                )
+                );
               })}
             </tr>
           ))}
         </thead>
- 
-                <tbody>
+        <tbody>
           {table
             .getRowModel()
             .rows.slice(0, 20)
-            .map(row => {
+            .map((row) => {
               return (
                 <tr key={row.id}>
-                  {row.getVisibleCells().map(cell => {
-                    return (
-                      <td key={cell.id}>
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext()
-                        )}
-                      </td>
-                    )
+                  {row.getVisibleCells().map((cell) => {
+                    return <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>;
                   })}
                 </tr>
-              )
+              );
             })}
         </tbody>
         {/* <tfoot>
@@ -113,9 +100,8 @@ const [sorting,setSorting]=useState([])
           ))}
         </tfoot> */}
       </table>
-      
     </div>
   );
-}
+};
 
 export default ApplicantsTable;

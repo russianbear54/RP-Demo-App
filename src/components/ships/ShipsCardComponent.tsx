@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { gql, useQuery } from "@apollo/client";
 import { ListDiv, ListMain } from "../../styles/ListPage/styles";
 import ShipCardComponent from "./ShipCardComponent";
-import ButtonsComponent from "../buttons/Buttons";
+import ButtonsComponent from "../Buttons";
 // import CARDcomponent from "../generics/CARDcomponent";
 import { useWidth } from "../../hooks/use-width";
 

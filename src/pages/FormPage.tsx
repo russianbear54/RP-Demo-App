@@ -1,6 +1,6 @@
 import CardComponent from "../components/form/CardComponent";
 import FormComponent from "../components/form/FormComponent";
-import { FormPageWrapper, Split } from "../styles/FormPage/styles";
+import { FormPageWrapper, Split } from "../components/form/styles";
 import {  motion } from "framer-motion";
 
 const FormPage: React.FC = () => {

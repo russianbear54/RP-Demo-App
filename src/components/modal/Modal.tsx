@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import Backdrop from "./Backdrop";
 import ApplicantsTable from "../table/ApplicantsTable";
-import {ModaL} from '../../styles/Modal/styles'
-
+import { ModaL } from './styles'
 
 const dropIn = {
   hidden: { y: "-100vh", opacity: 0 },
@@ -10,21 +9,15 @@ const dropIn = {
   exit: { y: "100vh", opacity: 0 },
 };
 
-interface Props{
-  handleClose: () => void; 
+interface Props {
+  handleClose: () => void;
 }
 
-
-const Modal:React.FC<Props>  = ( {handleClose} ) => {
+const Modal: React.FC<Props> = ({ handleClose }) => {
   return (
     <Backdrop onClick={handleClose}>
-      <ModaL as={motion.div}
-        onClick={(e) => e.stopPropagation()}        
-        variants={dropIn}
-        initial="hidden"
-        animate="visible"
-        exit="exit">
-        <ApplicantsTable/>
+      <ModaL as={motion.div} onClick={(e) => e.stopPropagation()} variants={dropIn} initial="hidden" animate="visible" exit="exit">
+        <ApplicantsTable />
         <button onClick={handleClose}>Close</button>
       </ModaL>
     </Backdrop>

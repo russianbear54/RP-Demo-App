@@ -139,56 +139,5 @@ export const DetailsDiv = styled.div`
   }
 
 `;
-export const ButtonsDiv = styled.div`
-  position: relative;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  width: 31.25em;
 
-  ${styles.screen.smallScreen} {
-    width: 22em;
-  }
 
-  ${styles.screen.iPadMini} {
-    width: 25em;
-  }
-`;
-
-// export const Button = styled.button`
-//   font-family: "Oranienbaum";
-//   font-style: normal;
-//   font-weight: 400;
-//   font-size: 2em;
-//   /* line-height: 35px; */
-//   background: ${styles.color.blue.regular};
-//   color: ${styles.color.white};
-//   width: 6.6em;
-//   height: 2em;
-//   border-radius: 14px;
-
-//   ${styles.screen.smallScreen} {
-//     /* width: 4em;
-//     height: 2.25em; */
-//     font-size: 1.5em;
-//   }
-
-//   ${styles.screen.iPadMini} {
-//     /* width: 25em; */
-//     font-size: 1.25em;
-//   }
-// `;
-
-///// COUNTRIES
-
-// export const CountryCard = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   color: ${styles.color.blue.regular};
-//   width: 19em;
-//   height: 14em;
-//   background: ${styles.color.gray.lightGray};
-//   box-shadow: 0px 3.49584px 13.9834px -3.49584px rgba(0, 0, 0, 0.25);
-//   border-radius: 11.6939px;
-//   margin: auto;
-// `;

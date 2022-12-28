@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { styles } from "../index";
+import { styles } from "../../styles/index";
 
 export const FormPageWrapper = styled.div`
   display: flex;
@@ -114,16 +114,11 @@ export const Circle = styled.div`
     width: calc((1200 / 1920) * 8em);
     height: calc((1200 / 1920) * 8em);
     bottom: calc((1200 / 1920) * -4.25em);
-    /* width: 7em;
-    height: 7em; */
 
-    /* bottom: -3.8em; */
   }
 
   ${styles.screen.smallScreen} {
-    /* width: calc((1024 / 1920) * 8em);
-    height: calc((1024 / 1920) * 8em);
-    bottom: calc((1024 / 1920) * -4.25em); */
+
     width: 5.25em;
     height: 5.25em;
     bottom: -2.75em;
@@ -133,9 +128,7 @@ export const Circle = styled.div`
     width: calc((768 / 1920) * 14em);
     height: calc((768 / 1920) * 14em);
     bottom: calc((768 / 1920) * -7.25em);
-    /* width: 4.5em;
-    height: 4.5em;
-    bottom: -2.5em; */
+ 
   }
 
   ${styles.screen.mobileLarge} {
@@ -171,7 +164,7 @@ export const TextDiv = styled.div`
   ${styles.screen.largeScreen} {
     margin-left: calc((1200 / 1920) * 2.5em);
     margin-top: calc((1200 / 1920) * 5.5em);
-    /* height: 50%; */
+  
   }
 
   ${styles.screen.smallScreen} {
@@ -190,7 +183,7 @@ export const TextDiv = styled.div`
 export const Label = styled.div`
   font-family: ${styles.font.card};
   font-style: normal;
-  /* align-items: center; */
+
   font-weight: 400;
   font-size: 1.25em;
   letter-spacing: 0.133273px;
@@ -206,7 +199,7 @@ export const Label = styled.div`
   }
 
   ${styles.screen.iPadMini} {
-    /* font-size: calc((768 / 1920) * 1.25em); */
+
     font-size: 1em;
   }
 
@@ -229,7 +222,7 @@ export const Value = styled.div`
   }
 
   ${styles.screen.smallScreen} {
-    /* font-size: calc((1024 / 1920) * 1.25em); */
+ 
     font-size: 1.25em;
   }
 

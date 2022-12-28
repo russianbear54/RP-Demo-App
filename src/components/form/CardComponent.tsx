@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { selectForms } from "../../store/slices/formsSlice";
-import { Circle, Card, Label, Value, TextDiv, Pair, FPContainer, CardDiv } from "../../styles/FormPage/styles";
+import { Circle, Card, Label, Value, TextDiv, Pair, FPContainer, CardDiv } from "./styles";
 import { Button } from "@mui/material";
 import Modal from "../modal/Modal";
 import FormPageTitles from "./FormPageTitles";

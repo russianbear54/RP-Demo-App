@@ -1,4 +1,3 @@
-//  import {styles} from './index'
 
 export const formStyle = {
   position: "relative",

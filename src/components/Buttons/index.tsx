@@ -1,5 +1,5 @@
 import React from "react";
-import {  ButtonsDiv } from "../../styles/ListPage/styles";
+import {  ButtonsDiv } from "./style";
 import {Button } from "@mui/material";
 
 interface Props {

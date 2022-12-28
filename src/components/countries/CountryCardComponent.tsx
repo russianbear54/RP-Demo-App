@@ -3,6 +3,7 @@ import { DetailsDiv, IconDiv, Label, InfoCard, Value } from "../../styles/ListPa
 import { CountriesIcons } from "../../images/CountriesIcons";
 import { styles } from "../../styles/index";
 import { useWidth } from "../../hooks/use-width";
+import { motion } from "framer-motion";
 
 interface Props {
   name: string;
@@ -25,7 +26,7 @@ const CountryCardComponent: React.FC<Props> = ({ name, capital, phone }) => {
   ];
 
   return (
-    <InfoCard>
+    <InfoCard as={motion.div} whileHover={{ scale: 1.2 }}>
       <IconDiv>
         {countriesIcons.map((icon, index) => (
           <div key={index}>{icon}</div>

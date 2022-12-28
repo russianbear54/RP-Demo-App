@@ -1,4 +1,4 @@
-import { Line } from "../../styles/HomePage/styles";
+import { Line } from "./styles";
 import { ToolsIcons } from "../../images/ToolsIcons";
 import { useEffect, useState } from "react";
 import {styles} from '../../styles/index'
