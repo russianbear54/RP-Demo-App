@@ -5,6 +5,7 @@ import ShipCardComponent from "./ShipCardComponent";
 import ButtonsComponent from "../Buttons";
 // import CARDcomponent from "../generics/CARDcomponent";
 import { useWidth } from "../../hooks/use-width";
+import { useNavigate } from "react-router-dom";
 
 const GET_SHIPS = gql`
   query ListShips($limit: Int!, $offset: Int!) {
@@ -20,6 +21,8 @@ const ShipsCardComponent: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [width, setWidth] = useState(null);
   const { PAGE_SIZE } = useWidth(width);
+  const navigate=useNavigate()
+
 
   const { loading, data } = useQuery(GET_SHIPS, {
     variables: {
@@ -28,9 +31,15 @@ const ShipsCardComponent: React.FC = () => {
     },
   });
 
+
+
   useEffect(() => {
+    if(!data){
+      alert('This API is down')
+      navigate('/home')
+    }
     setWidth(window.screen.width);
-  }, []);
+  }, [data,navigate]);
 
   const buttonProps = { currPage: currentPage, setCurrPage: setCurrentPage, pageSize: PAGE_SIZE, loading, countries: false, data };
 

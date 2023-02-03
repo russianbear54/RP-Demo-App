@@ -1,6 +1,4 @@
-
 import {  useState } from "react";
-
 import { BurgersIcons } from "../../images/BurgersIcons";
 import { styles } from "../../styles";
 import { HamburgerButton, HamburgerNav, HamburgerNavbarLink, HamburgerNavigationItems, NavbarLink, NavButtonWrapper } from "../../styles/stylesSC";

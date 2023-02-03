@@ -3,7 +3,7 @@ import React from "react";
 import CountriesCardComponent from "../components/countries/CountriesCardComponent";
 import { Wrapper } from "../components/homePage/styles";
 import { Title } from "../styles/stylesSC";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useAPI } from "../hooks/use-api";
 
 const dropIn = {
@@ -16,16 +16,12 @@ const CountriesPage: React.FC = () => {
   const client = useAPI("countries");
 
   return (
-    <AnimatePresence>
-      <motion.div variants={dropIn} initial="hidden" animate="visible" exit="exit">
-        <Wrapper>
-          <Title>Countries List</Title>
-          <ApolloProvider client={client}>
-            <CountriesCardComponent />
-          </ApolloProvider>
-        </Wrapper>
-      </motion.div>
-    </AnimatePresence>
+    <Wrapper as={motion.div} key="countries" variants={dropIn} initial="hidden" animate="visible" exit="exit">
+      <Title>Countries List</Title>
+      <ApolloProvider client={client}>
+        <CountriesCardComponent />
+      </ApolloProvider>
+    </Wrapper>
   );
 };
 

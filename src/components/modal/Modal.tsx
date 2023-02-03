@@ -16,7 +16,7 @@ interface Props {
 const Modal: React.FC<Props> = ({ handleClose }) => {
   return (
     <Backdrop onClick={handleClose}>
-      <ModaL as={motion.div} onClick={(e) => e.stopPropagation()} variants={dropIn} initial="hidden" animate="visible" exit="exit">
+      <ModaL as={motion.div} drag dragMomentum={false} onClick={(e) => e.stopPropagation()} variants={dropIn} initial="hidden" animate="visible" exit="exit">
         <ApplicantsTable />
         <button onClick={handleClose}>Close</button>
       </ModaL>

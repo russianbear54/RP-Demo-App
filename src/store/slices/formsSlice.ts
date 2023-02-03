@@ -5,7 +5,7 @@ import { RootState } from "../store";
 interface FormInputs {
   firstName: string;
   lastName: string;
-  age: number;
+  age: any;
   department: string;
 }
 

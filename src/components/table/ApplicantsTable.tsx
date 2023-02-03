@@ -6,7 +6,7 @@ import { selectForms } from "../../store/slices/formsSlice";
 type Applicant = {
   firstName: string;
   lastName: string;
-  age: number;
+  age: any;
   department: string;
 };
 

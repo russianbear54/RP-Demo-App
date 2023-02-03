@@ -5,7 +5,7 @@ import { Wrapper, Par, Trio } from "../components/homePage/styles";
 import { Title } from "../styles/stylesSC";
 import { instructions } from "../Dummies/homePageInstructions";
 
-const HomePage:React.FC=()=> {
+const HomePage: React.FC = () => {
   return (
     <Wrapper>
       <Title>Home Page</Title>
@@ -18,6 +18,6 @@ const HomePage:React.FC=()=> {
       <IconsLine />
     </Wrapper>
   );
-}
+};
 
 export default HomePage;

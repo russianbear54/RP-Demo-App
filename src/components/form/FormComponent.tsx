@@ -7,7 +7,9 @@ import { FPContainer } from "./styles";
 import { enterFirstName, enterLastName, setDepartment, enterAge } from "../../store/slices/formSlice";
 import { useAppDispatch } from "../../store/hooks";
 
-const initialValues = { firstName: "", lastName: "", age: undefined as number, department: "" };
+const initialValues = { firstName: "", lastName: "", age: "", department: "" };
+
+
 
 const positionSelector = ({ children, form, field }) => {
 

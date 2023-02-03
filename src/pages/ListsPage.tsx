@@ -7,6 +7,7 @@ import { Title } from "../styles/stylesSC";
 const ListsPage: React.FC = () => {
   const client = useAPI("ships");
 
+
   return (
     <Wrapper>
       <Title>Ships List</Title>

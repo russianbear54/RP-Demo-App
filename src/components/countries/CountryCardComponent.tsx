@@ -26,7 +26,7 @@ const CountryCardComponent: React.FC<Props> = ({ name, capital, phone }) => {
   ];
 
   return (
-    <InfoCard as={motion.div} whileHover={{ scale: 1.2 }}>
+    <InfoCard as={motion.div} whileHover={{ scale: 1.2}}>
       <IconDiv>
         {countriesIcons.map((icon, index) => (
           <div key={index}>{icon}</div>

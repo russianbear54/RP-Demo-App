@@ -4,13 +4,13 @@ import { RootState } from "../store";
 interface FormInputs {
   firstName: string;
   lastName: string;
-  age: number;
+  age: any;
   department: string;
 }
 
 export const formSlicE = createSlice({
   name: "form",
-  initialState: { firstName: "", lastName: "", age: null, department: "" } as FormInputs,
+  initialState: { firstName: "", lastName: "", age: undefined, department: "" } as FormInputs,
   reducers: {
     enterFirstName(state, action) {
       state.firstName = action.payload;
