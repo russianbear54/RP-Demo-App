@@ -2,6 +2,12 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { styles } from "./index";
 
+export const Window=styled.div`
+
+width:100vw;
+height:100vh;
+`
+
 export const NavButtonWrapper = styled.section`
   margin: auto;
   margin-top: 4.5em;

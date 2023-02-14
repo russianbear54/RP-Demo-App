@@ -7,6 +7,7 @@ import ButtonsComponent from "../Buttons";
 import { useWidth } from "../../hooks/use-width";
 import { useNavigate } from "react-router-dom";
 
+
 const GET_SHIPS = gql`
   query ListShips($limit: Int!, $offset: Int!) {
     ships(limit: $limit, offset: $offset) {
@@ -34,6 +35,7 @@ const ShipsCardComponent: React.FC = () => {
 
 
   useEffect(() => {
+
     if(!data){
       alert('This API is down')
       navigate('/home')
